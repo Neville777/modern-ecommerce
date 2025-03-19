@@ -121,4 +121,9 @@ export class ProductsController {
 
     return result.pipeDataStreamToResponse(res);
   }
+
+  @Get('slug/:slug')
+  getProductBySlug(@Param('slug') slug: string) {
+    return this.productsService.findBySlug(slug);
+  }
 }

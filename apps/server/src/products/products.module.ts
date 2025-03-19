@@ -7,8 +7,8 @@ import { AppService } from '@/app/services/app.service';
 import { CloudinaryModule } from '@/cloudinary/cloudinary.module';
 import { AiModule } from '@/ai/ai.module';
 import { ProductExpertAgent } from '@/ai/agents/product-expert.agent';
-import { Order } from '@/orders/schemas/order.schema';
-import { OrderSchema } from '@/orders/schemas/order.schema';
+import { Order, OrderSchema } from '@/orders/schemas/order.schema'; 
+import { ProductSeedCommand } from '@/users/commands/product-seed.command';
 
 @Module({
   imports: [
@@ -25,7 +25,12 @@ import { OrderSchema } from '@/orders/schemas/order.schema';
     CloudinaryModule,
     AiModule,
   ],
-  providers: [ProductsService, AppService, ProductExpertAgent],
+  providers: [
+    ProductsService,
+    AppService,
+    ProductExpertAgent,
+    ProductSeedCommand, // Add this
+  ],
   controllers: [ProductsController],
   exports: [ProductsService],
 })

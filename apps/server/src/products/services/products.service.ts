@@ -194,6 +194,14 @@ export class ProductsService {
     await this.productModel.deleteMany({});
   }
 
+  async findBySlug(slug: string): Promise<ProductDocument> {
+    const product = await this.productModel.findOne({ slug });
+
+    if (!product) throw new NotFoundException('No product with given slug.');
+
+    return product;
+  }
+
   async create(productData: Partial<Product>): Promise<ProductDocument> {
     const product = await this.productModel.create({
       ...productData,

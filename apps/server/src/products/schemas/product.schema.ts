@@ -30,6 +30,9 @@ export class Product {
   @Prop({ required: true })
   name!: string;
 
+  @Prop({ required: true, unique: true }) // Add slug field
+  slug!: string; // Add slug field
+
   @Prop({ required: true })
   brand!: string;
 
@@ -62,3 +65,16 @@ export class Product {
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);
+
+// Add a pre-save hook to automatically generate slugs from product names
+ProductSchema.pre('save', function (next) {
+  if (!this.isModified('name')) return next();
+
+  // Convert the name to a URL-friendly slug
+  this.slug = this.name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+
+  next();
+});

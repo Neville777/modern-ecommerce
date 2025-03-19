@@ -9,6 +9,7 @@ import { PassportModule } from '@nestjs/passport';
 import { LocalStrategy } from '../strategies/local.strategy';
 import { JwtStrategy } from 'src/strategies/jwt.strategy';
 import { UsersController } from './controller/users.controller';
+import { UserSeedCommand } from './commands/user-seed.command';
 
 @Module({
   imports: [
@@ -26,6 +27,12 @@ import { UsersController } from './controller/users.controller';
     }),
   ],
   controllers: [AuthController, UsersController],
-  providers: [UsersService, AuthService, LocalStrategy, JwtStrategy],
+  providers: [
+    UsersService,
+    AuthService,
+    LocalStrategy,
+    JwtStrategy,
+    UserSeedCommand,
+  ],
 })
 export class UsersModule {}

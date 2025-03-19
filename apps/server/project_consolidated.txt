@@ -1,0 +1,4094 @@
+PROJECT STRUCTURE
+================
+/home/nevo/projects/modern-ecommerce/apps/server
+├── consolidate_project.sh
+├── dist
+│   └── main.js
+├── docker-compose.yml
+├── nest-cli.json
+├── node_modules
+│   ├── ai -> ../../../node_modules/.pnpm/ai@4.1.46_react@19.0.0_zod@3.24.2/node_modules/ai
+│   ├── @ai-sdk
+│   │   └── openai -> ../../../../node_modules/.pnpm/@ai-sdk+openai@1.1.15_zod@3.24.2/node_modules/@ai-sdk/openai
+│   ├── argon2 -> ../../../node_modules/.pnpm/argon2@0.41.1/node_modules/argon2
+│   ├── buffer-to-stream -> ../../../node_modules/.pnpm/buffer-to-stream@1.0.0/node_modules/buffer-to-stream
+│   ├── class-transformer -> ../../../node_modules/.pnpm/class-transformer@0.5.1/node_modules/class-transformer
+│   ├── class-validator -> ../../../node_modules/.pnpm/class-validator@0.14.1/node_modules/class-validator
+│   ├── cloudinary -> ../../../node_modules/.pnpm/cloudinary@2.5.1/node_modules/cloudinary
+│   ├── cookie-parser -> ../../../node_modules/.pnpm/cookie-parser@1.4.7/node_modules/cookie-parser
+│   ├── cross-env -> ../../../node_modules/.pnpm/cross-env@7.0.3/node_modules/cross-env
+│   ├── dotenv -> ../../../node_modules/.pnpm/dotenv@16.4.7/node_modules/dotenv
+│   ├── @elecshop
+│   │   └── shared -> ../../../shared
+│   ├── eslint -> ../../../node_modules/.pnpm/eslint@9.21.0/node_modules/eslint
+│   ├── eslint-config-prettier -> ../../../node_modules/.pnpm/eslint-config-prettier@9.1.0_eslint@9.21.0/node_modules/eslint-config-prettier
+│   ├── eslint-plugin-prettier -> ../../../node_modules/.pnpm/eslint-plugin-prettier@5.2.3_eslint-config-prettier@9.1.0_eslint@9.21.0_prettier@3.5.2/node_modules/eslint-plugin-prettier
+│   ├── express -> ../../../node_modules/.pnpm/express@4.21.2/node_modules/express
+│   ├── @faker-js
+│   │   └── faker -> ../../../../node_modules/.pnpm/@faker-js+faker@9.5.1/node_modules/@faker-js/faker
+│   ├── helmet -> ../../../node_modules/.pnpm/helmet@8.0.0/node_modules/helmet
+│   ├── jest -> ../../../node_modules/.pnpm/jest@29.7.0_@types+node@22.13.8_ts-node@10.9.2/node_modules/jest
+│   ├── mongodb -> ../../../node_modules/.pnpm/mongodb@6.14.0/node_modules/mongodb
+│   ├── mongoose -> ../../../node_modules/.pnpm/mongoose@8.11.0/node_modules/mongoose
+│   ├── multer -> ../../../node_modules/.pnpm/multer@1.4.5-lts.1/node_modules/multer
+│   ├── @nestjs
+│   │   ├── cli -> ../../../../node_modules/.pnpm/@nestjs+cli@10.4.9/node_modules/@nestjs/cli
+│   │   ├── common -> ../../../../node_modules/.pnpm/@nestjs+common@10.4.15_class-transformer@0.5.1_class-validator@0.14.1_reflect-metadata@0.2.2_rxjs@7.8.2/node_modules/@nestjs/common
+│   │   ├── config -> ../../../../node_modules/.pnpm/@nestjs+config@3.3.0_@nestjs+common@10.4.15_rxjs@7.8.2/node_modules/@nestjs/config
+│   │   ├── core -> ../../../../node_modules/.pnpm/@nestjs+core@10.4.15_@nestjs+common@10.4.15_@nestjs+platform-express@10.4.15_reflect-metadata@0.2.2_rxjs@7.8.2/node_modules/@nestjs/core
+│   │   ├── jwt -> ../../../../node_modules/.pnpm/@nestjs+jwt@10.2.0_@nestjs+common@10.4.15/node_modules/@nestjs/jwt
+│   │   ├── mongoose -> ../../../../node_modules/.pnpm/@nestjs+mongoose@10.1.0_@nestjs+common@10.4.15_@nestjs+core@10.4.15_mongoose@8.11.0_rxjs@7.8.2/node_modules/@nestjs/mongoose
+│   │   ├── passport -> ../../../../node_modules/.pnpm/@nestjs+passport@10.0.3_@nestjs+common@10.4.15_passport@0.7.0/node_modules/@nestjs/passport
+│   │   ├── platform-express -> ../../../../node_modules/.pnpm/@nestjs+platform-express@10.4.15_@nestjs+common@10.4.15_@nestjs+core@10.4.15/node_modules/@nestjs/platform-express
+│   │   ├── schematics -> ../../../../node_modules/.pnpm/@nestjs+schematics@10.2.3_typescript@5.8.2/node_modules/@nestjs/schematics
+│   │   ├── swagger -> ../../../../node_modules/.pnpm/@nestjs+swagger@8.1.1_@nestjs+common@10.4.15_@nestjs+core@10.4.15_class-transformer@0.5.1_cla_tgur74b63zsfn7xwvf4pbpdere/node_modules/@nestjs/swagger
+│   │   └── testing -> ../../../../node_modules/.pnpm/@nestjs+testing@10.4.15_@nestjs+common@10.4.15_@nestjs+core@10.4.15_@nestjs+platform-express@10.4.15/node_modules/@nestjs/testing
+│   ├── nestjs-command -> ../../../node_modules/.pnpm/nestjs-command@3.1.4_@nestjs+common@10.4.15_@nestjs+core@10.4.15_yargs@17.7.2/node_modules/nestjs-command
+│   ├── openai -> ../../../node_modules/.pnpm/openai@4.86.1_zod@3.24.2/node_modules/openai
+│   ├── passport -> ../../../node_modules/.pnpm/passport@0.7.0/node_modules/passport
+│   ├── passport-jwt -> ../../../node_modules/.pnpm/passport-jwt@4.0.1/node_modules/passport-jwt
+│   ├── passport-local -> ../../../node_modules/.pnpm/passport-local@1.0.0/node_modules/passport-local
+│   ├── prettier -> ../../../node_modules/.pnpm/prettier@3.5.2/node_modules/prettier
+│   ├── reflect-metadata -> ../../../node_modules/.pnpm/reflect-metadata@0.2.2/node_modules/reflect-metadata
+│   ├── replicate -> ../../../node_modules/.pnpm/replicate@1.0.1/node_modules/replicate
+│   ├── rxjs -> ../../../node_modules/.pnpm/rxjs@7.8.2/node_modules/rxjs
+│   ├── source-map-support -> ../../../node_modules/.pnpm/source-map-support@0.5.21/node_modules/source-map-support
+│   ├── stream -> ../../../node_modules/.pnpm/stream@0.0.3/node_modules/stream
+│   ├── supertest -> ../../../node_modules/.pnpm/supertest@7.0.0/node_modules/supertest
+│   ├── tsconfig-paths -> ../../../node_modules/.pnpm/tsconfig-paths@4.2.0/node_modules/tsconfig-paths
+│   ├── ts-jest -> ../../../node_modules/.pnpm/ts-jest@29.2.6_@babel+core@7.26.9_jest@29.7.0_typescript@5.8.2/node_modules/ts-jest
+│   ├── ts-loader -> ../../../node_modules/.pnpm/ts-loader@9.5.2_typescript@5.8.2_webpack@5.98.0/node_modules/ts-loader
+│   ├── ts-node -> ../../../node_modules/.pnpm/ts-node@10.9.2_@types+node@22.13.8_typescript@5.8.2/node_modules/ts-node
+│   ├── @types
+│   │   ├── argon2 -> ../../../../node_modules/.pnpm/@types+argon2@0.15.4/node_modules/@types/argon2
+│   │   ├── buffer-to-stream -> ../../../../node_modules/.pnpm/@types+buffer-to-stream@1.0.3/node_modules/@types/buffer-to-stream
+│   │   ├── cookie-parser -> ../../../../node_modules/.pnpm/@types+cookie-parser@1.4.8_@types+express@5.0.0/node_modules/@types/cookie-parser
+│   │   ├── express -> ../../../../node_modules/.pnpm/@types+express@5.0.0/node_modules/@types/express
+│   │   ├── express-session -> ../../../../node_modules/.pnpm/@types+express-session@1.18.1/node_modules/@types/express-session
+│   │   ├── jest -> ../../../../node_modules/.pnpm/@types+jest@29.5.14/node_modules/@types/jest
+│   │   ├── multer -> ../../../../node_modules/.pnpm/@types+multer@1.4.12/node_modules/@types/multer
+│   │   ├── node -> ../../../../node_modules/.pnpm/@types+node@22.13.8/node_modules/@types/node
+│   │   ├── passport-jwt -> ../../../../node_modules/.pnpm/@types+passport-jwt@4.0.1/node_modules/@types/passport-jwt
+│   │   ├── passport-local -> ../../../../node_modules/.pnpm/@types+passport-local@1.0.38/node_modules/@types/passport-local
+│   │   └── supertest -> ../../../../node_modules/.pnpm/@types+supertest@6.0.2/node_modules/@types/supertest
+│   ├── typescript -> ../../../node_modules/.pnpm/typescript@5.8.2/node_modules/typescript
+│   ├── @typescript-eslint
+│   │   ├── eslint-plugin -> ../../../../node_modules/.pnpm/@typescript-eslint+eslint-plugin@8.25.0_@typescript-eslint+parser@8.25.0_eslint@9.21.0_typescript@5.8.2/node_modules/@typescript-eslint/eslint-plugin
+│   │   └── parser -> ../../../../node_modules/.pnpm/@typescript-eslint+parser@8.25.0_eslint@9.21.0_typescript@5.8.2/node_modules/@typescript-eslint/parser
+│   └── zod -> ../../../node_modules/.pnpm/zod@3.24.2/node_modules/zod
+├── package.json
+├── project_consolidated.txt
+├── README.md
+├── src
+│   ├── ai
+│   │   ├── agents
+│   │   │   └── product-expert.agent.ts
+│   │   ├── ai.module.ts
+│   │   ├── custom-middleware.ts
+│   │   ├── interfaces
+│   │   │   ├── agents.ts
+│   │   │   └── image-generation.interface.ts
+│   │   ├── services
+│   │   │   ├── ai-config.service.ts
+│   │   │   └── image-generation.service.ts
+│   │   └── tools
+│   │       └── product-generation.tool.ts
+│   ├── app
+│   │   ├── app.module.ts
+│   │   ├── controllers
+│   │   │   └── app.controller.ts
+│   │   └── services
+│   │       └── app.service.ts
+│   ├── cart
+│   │   ├── cart.module.ts
+│   │   ├── controller
+│   │   │   ├── cart.controller.spec.ts
+│   │   │   └── cart.controller.ts
+│   │   ├── dtos
+│   │   │   ├── add-to-cart.dto.ts
+│   │   │   ├── save-payment-method.dto.ts
+│   │   │   └── save-shipping-details.dto.ts
+│   │   ├── schemas
+│   │   │   └── cart.schema.ts
+│   │   └── services
+│   │       ├── cart.service.spec.ts
+│   │       └── cart.service.ts
+│   ├── cli.ts
+│   ├── cloudinary
+│   │   ├── cloudinary.module.ts
+│   │   ├── constants.ts
+│   │   └── services
+│   │       ├── cloudinary.provider.ts
+│   │       └── cloudinary.service.ts
+│   ├── decorators
+│   │   └── current-user.decorator.ts
+│   ├── guards
+│   │   ├── admin.guard.ts
+│   │   ├── jwt-auth.guard.ts
+│   │   ├── local-auth.guard.ts
+│   │   └── not-authenticated.guard.ts
+│   ├── interceptors
+│   │   └── serialize.interceptor.ts
+│   ├── interfaces
+│   │   └── index.ts
+│   ├── main.ts
+│   ├── orders
+│   │   ├── controller
+│   │   │   └── orders.controller.ts
+│   │   ├── order.module.ts
+│   │   ├── schemas
+│   │   │   └── order.schema.ts
+│   │   └── services
+│   │       └── orders.service.ts
+│   ├── products
+│   │   ├── controller
+│   │   │   └── products.controller.ts
+│   │   ├── dtos
+│   │   │   ├── product.dto.ts
+│   │   │   └── review.dto.ts
+│   │   ├── products.module.ts
+│   │   ├── schemas
+│   │   │   └── product.schema.ts
+│   │   └── services
+│   │       ├── products.service.spec.ts
+│   │       └── products.service.ts
+│   ├── strategies
+│   │   ├── jwt.strategy.ts
+│   │   └── local.strategy.ts
+│   ├── users
+│   │   ├── commands
+│   │   │   ├── product-seed.command.ts
+│   │   │   └── user-seed.command.ts
+│   │   ├── controller
+│   │   │   ├── auth.controller.ts
+│   │   │   └── users.controller.ts
+│   │   ├── dtos
+│   │   │   ├── admin.profile.dto.ts
+│   │   │   ├── auth.dto.ts
+│   │   │   ├── paginated-users.dto.ts
+│   │   │   ├── profile.dto.ts
+│   │   │   ├── register.dto.ts
+│   │   │   └── user.dto.ts
+│   │   ├── schemas
+│   │   │   └── user.schema.ts
+│   │   ├── services
+│   │   │   ├── auth.service.ts
+│   │   │   ├── tests
+│   │   │   │   ├── auth.service.spec.ts
+│   │   │   │   └── users.service.spec.ts
+│   │   │   └── users.service.ts
+│   │   └── users.module.ts
+│   └── utils
+│       ├── config.ts
+│       ├── data
+│       │   ├── products.ts
+│       │   ├── product.ts
+│       │   └── users.ts
+│       ├── index.ts
+│       ├── password.ts
+│       └── seed-users.ts
+├── test
+│   ├── app.e2e-spec.ts
+│   └── jest-e2e.json
+├── tsconfig.build.json
+└── tsconfig.json
+
+111 directories, 80 files
+
+FILE CONTENTS
+============
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/package.json
+---------------------------------------------------
+Binary or non-text file: /home/nevo/projects/modern-ecommerce/apps/server/package.json
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/tsconfig.build.json
+---------------------------------------------------
+Binary or non-text file: /home/nevo/projects/modern-ecommerce/apps/server/tsconfig.build.json
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/test/jest-e2e.json
+---------------------------------------------------
+Binary or non-text file: /home/nevo/projects/modern-ecommerce/apps/server/test/jest-e2e.json
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/test/app.e2e-spec.ts
+---------------------------------------------------
+import { Test, TestingModule } from '@nestjs/testing';
+import { INestApplication } from '@nestjs/common';
+import * as request from 'supertest';
+import { AppModule } from '../src/app/app.module';
+
+describe('AppController (e2e)', () => {
+  let app: INestApplication;
+
+  beforeEach(async () => {
+    const moduleFixture: TestingModule = await Test.createTestingModule({
+      imports: [AppModule],
+    }).compile();
+
+    app = moduleFixture.createNestApplication();
+    await app.init();
+  });
+
+  it('/ (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/')
+      .expect(200)
+      .expect('Hello World!');
+  });
+});
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/cart/schemas/cart.schema.ts
+---------------------------------------------------
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document, Schema as MongooseSchema } from 'mongoose';
+import { User } from '../../users/schemas/user.schema';
+import { CartItem, ShippingDetails } from '../../interfaces';
+
+export type CartDocument = Cart & Document;
+
+@Schema({ timestamps: true })
+export class Cart {
+  @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'User', required: true })
+  userId!: User;
+
+  @Prop([
+    {
+      productId: {
+        type: MongooseSchema.Types.ObjectId,
+        ref: 'Product',
+        required: true,
+      },
+      name: { type: String, required: true },
+      image: { type: String, required: true },
+      price: { type: Number, required: true },
+      countInStock: { type: Number, required: true },
+      qty: { type: Number, required: true },
+    },
+  ])
+  items!: CartItem[];
+
+  @Prop({
+    type: {
+      address: String,
+      city: String,
+      postalCode: String,
+      country: String,
+    },
+    required: false,
+  })
+  shippingDetails?: ShippingDetails;
+
+  @Prop({ default: 'PayPal' })
+  paymentMethod!: string;
+
+  @Prop({ default: 0 })
+  itemsPrice!: number;
+
+  @Prop({ default: 0 })
+  taxPrice!: number;
+
+  @Prop({ default: 0 })
+  shippingPrice!: number;
+
+  @Prop({ default: 0 })
+  totalPrice!: number;
+}
+
+export const CartSchema = SchemaFactory.createForClass(Cart);
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/cart/controller/cart.controller.spec.ts
+---------------------------------------------------
+import { Test, TestingModule } from '@nestjs/testing';
+import { CartController } from './cart.controller';
+
+describe('CartController', () => {
+  let controller: CartController;
+
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      controllers: [CartController],
+    }).compile();
+
+    controller = module.get<CartController>(CartController);
+  });
+
+  it('should be defined', () => {
+    expect(controller).toBeDefined();
+  });
+});
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/cart/controller/cart.controller.ts
+---------------------------------------------------
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+  UseGuards,
+  BadRequestException,
+} from '@nestjs/common';
+import { JwtAuthGuard } from '../../guards/jwt-auth.guard';
+import { CurrentUser } from '../../decorators/current-user.decorator';
+import { CartService } from '../services/cart.service';
+import { AddToCartDto } from '../dtos/add-to-cart.dto';
+import { SaveShippingDetailsDto } from '../dtos/save-shipping-details.dto';
+import { SavePaymentMethodDto } from '../dtos/save-payment-method.dto';
+import { UserDocument } from '../../users/schemas/user.schema';
+
+@Controller('cart')
+@UseGuards(JwtAuthGuard)
+export class CartController {
+  constructor(private cartService: CartService) {}
+
+  @Get()
+  getCart(@CurrentUser() user: UserDocument) {
+    return this.cartService.getCart(user);
+  }
+
+  @Post('items')
+  addToCart(
+    @Body() { productId, qty }: AddToCartDto,
+    @CurrentUser() user: UserDocument,
+  ) {
+    if (!productId) {
+      throw new BadRequestException('Product ID is required');
+    }
+    return this.cartService.addCartItem(productId, qty, user);
+  }
+
+  @Put('items/:productId')
+  updateCartItem(
+    @Param('productId') productId: string,
+    @Body('qty') qty: number,
+    @CurrentUser() user: UserDocument,
+  ) {
+    return this.cartService.updateCartItemQty(productId, qty, user);
+  }
+
+  @Delete('items/:productId')
+  removeFromCart(
+    @Param('productId') productId: string,
+    @CurrentUser() user: UserDocument,
+  ) {
+    return this.cartService.removeCartItem(productId, user);
+  }
+
+  @Post('shipping')
+  saveShipping(
+    @Body() shippingDetails: SaveShippingDetailsDto,
+    @CurrentUser() user: UserDocument,
+  ) {
+    return this.cartService.validateShippingDetails(shippingDetails);
+  }
+
+  @Post('payment')
+  savePaymentMethod(
+    @Body() { paymentMethod }: SavePaymentMethodDto,
+    @CurrentUser() user: UserDocument,
+  ) {
+    return this.cartService.validatePaymentMethod(paymentMethod);
+  }
+
+  @Delete()
+  clearCart(@CurrentUser() user: UserDocument) {
+    return this.cartService.clearCart(user);
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/cart/dtos/add-to-cart.dto.ts
+---------------------------------------------------
+import { IsNumber, IsOptional, IsString } from 'class-validator';
+import { ProductDocument } from 'src/products/schemas/product.schema';
+
+export class AddToCartDto {
+  @IsOptional()
+  product?: ProductDocument;
+
+  @IsNumber()
+  qty!: number;
+
+  @IsString()
+  productId!: string;
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/cart/dtos/save-shipping-details.dto.ts
+---------------------------------------------------
+import { IsString } from 'class-validator';
+
+export class SaveShippingDetailsDto {
+  @IsString()
+  address!: string;
+
+  @IsString()
+  city!: string;
+
+  @IsString()
+  postalCode!: string;
+
+  @IsString()
+  country!: string;
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/cart/dtos/save-payment-method.dto.ts
+---------------------------------------------------
+import { IsString } from 'class-validator';
+
+export class SavePaymentMethodDto {
+  @IsString()
+  paymentMethod!: string;
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/cart/services/cart.service.ts
+---------------------------------------------------
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { Cart, CartDocument } from '../schemas/cart.schema';
+import { ProductsService } from '../../products/services/products.service';
+import { CartItem, ShippingDetails } from '../../interfaces';
+import { UserDocument } from '../../users/schemas/user.schema';
+
+@Injectable()
+export class CartService {
+  constructor(
+    @InjectModel(Cart.name) private cartModel: Model<CartDocument>,
+    private productsService: ProductsService,
+  ) {}
+
+  async getCart(user: UserDocument): Promise<CartDocument> {
+    let cart = await this.cartModel.findOne({ userId: user._id });
+
+    if (!cart) {
+      cart = await this.cartModel.create({
+        userId: user._id,
+        items: [],
+      });
+    }
+
+    return cart;
+  }
+
+  private calculatePrices(cart: CartDocument) {
+    cart.itemsPrice = cart.items.reduce(
+      (acc, item) => acc + item.price * item.qty,
+      0,
+    );
+    cart.taxPrice = Number((0.15 * cart.itemsPrice).toFixed(2));
+    cart.shippingPrice = cart.itemsPrice > 100 ? 0 : 10;
+    cart.totalPrice = cart.itemsPrice + cart.taxPrice + cart.shippingPrice;
+    return cart;
+  }
+
+  async addCartItem(
+    productId: string,
+    qty: number,
+    user: UserDocument,
+  ): Promise<CartDocument> {
+    const product = await this.productsService.findById(productId);
+    if (!product) throw new NotFoundException('Product not found');
+
+    const cart = await this.getCart(user);
+    const existingItem = cart.items.find(
+      item => item.productId.toString() === productId,
+    );
+
+    if (existingItem) {
+      existingItem.qty = qty;
+    } else {
+      const cartItem: CartItem = {
+        productId: product._id.toString(),
+        name: product.name,
+        image: product.images[0],
+        price: product.price,
+        countInStock: product.countInStock,
+        qty,
+      };
+      cart.items.push(cartItem);
+    }
+
+    this.calculatePrices(cart);
+    return cart.save();
+  }
+
+  async removeCartItem(
+    productId: string,
+    user: UserDocument,
+  ): Promise<CartDocument> {
+    const cart = await this.getCart(user);
+    cart.items = cart.items.filter(
+      item => item.productId.toString() !== productId,
+    );
+    this.calculatePrices(cart);
+    return cart.save();
+  }
+
+  async updateCartItemQty(
+    productId: string,
+    qty: number,
+    user: UserDocument,
+  ): Promise<CartDocument> {
+    const cart = await this.getCart(user);
+    const item = cart.items.find(
+      item => item.productId.toString() === productId,
+    );
+
+    if (!item) throw new NotFoundException('Item not found in cart');
+    if (qty > item.countInStock)
+      throw new BadRequestException('Not enough stock');
+
+    item.qty = qty;
+    this.calculatePrices(cart);
+    return cart.save();
+  }
+
+  async clearCart(user: UserDocument): Promise<CartDocument> {
+    const cart = await this.getCart(user);
+    cart.items = [];
+    this.calculatePrices(cart);
+    return cart.save();
+  }
+
+  validateShippingDetails(shippingDetails: ShippingDetails): ShippingDetails {
+    const { address, city, postalCode, country } = shippingDetails;
+
+    if (!address || !city || !postalCode || !country) {
+      throw new BadRequestException('All shipping fields are required');
+    }
+    return shippingDetails;
+  }
+
+  validatePaymentMethod(paymentMethod: string): string {
+    const validMethods = ['PayPal', 'Stripe'];
+    if (!validMethods.includes(paymentMethod)) {
+      throw new BadRequestException('Invalid payment method');
+    }
+    return paymentMethod;
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/cart/services/cart.service.spec.ts
+---------------------------------------------------
+import { Test, TestingModule } from '@nestjs/testing';
+import { CartService } from './cart.service';
+
+describe('CartService', () => {
+  let service: CartService;
+
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      providers: [CartService],
+    }).compile();
+
+    service = module.get<CartService>(CartService);
+  });
+
+  it('should be defined', () => {
+    expect(service).toBeDefined();
+  });
+});
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/cart/cart.module.ts
+---------------------------------------------------
+import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { CartController } from './controller/cart.controller';
+import { CartService } from './services/cart.service';
+import { Cart, CartSchema } from './schemas/cart.schema';
+import { ProductsModule } from '../products/products.module';
+
+@Module({
+  imports: [
+    MongooseModule.forFeature([{ name: Cart.name, schema: CartSchema }]),
+    ProductsModule,
+  ],
+  controllers: [CartController],
+  providers: [CartService],
+  exports: [CartService],
+})
+export class CartModule {}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/ai/agents/product-expert.agent.ts
+---------------------------------------------------
+import { Injectable } from '@nestjs/common';
+import { convertToCoreMessages, Message, streamText, tool } from 'ai';
+import { z } from 'zod';
+import { AiConfigService } from '../services/ai-config.service';
+import { ProductGenerationTool } from '../tools/product-generation.tool';
+import { ProductCreationStep } from '@apps/shared/types/agents';
+
+@Injectable()
+export class ProductExpertAgent {
+  constructor(
+    private aiConfig: AiConfigService,
+    private productTool: ProductGenerationTool,
+  ) {}
+
+  async chat(messages: Message[]) {
+    const coreMessages = convertToCoreMessages(messages).filter(
+      message => message.content.length > 0,
+    );
+
+    const systemPrompt = `
+      You are a product development expert who helps users create and refine product ideas.
+
+      Follow this interactive process:
+      1. When generating basic product info:
+        - Ask user for initial product idea
+        - Generate draft product details
+        - Ask for approval and modifications
+        - Get specific inventory count from user
+        - Only proceed when user approves
+
+      2. When generating product images:
+        - Show image generation prompts
+        - Ask for approval before generating
+        - Allow user to modify style/angles
+
+      3. When generating brand assets:
+        - Propose brand identity elements
+        - Get user feedback on style
+        - Allow iterations on design
+
+      4. When validating final product:
+        - Show complete product summary
+        - Get final user approval
+        - Make suggested improvements
+
+      5. When saving the product:
+        - Validate the product data
+        - Save the product to the database
+        - Provide a link to the saved product 
+
+      Always ask for explicit user confirmation before proceeding to next step.
+      Use markdown formatting for all responses.
+      `;
+
+    const result = streamText({
+      model: this.aiConfig.getModel(),
+      system: systemPrompt,
+      messages: coreMessages,
+      tools: {
+        generateBasicInfo: tool({
+          description: 'Generate initial product concept from user description',
+          parameters: z.object({
+            userPrompt: z.string().describe('User product description'),
+            category: z.string().describe('Product category'),
+          }),
+          execute: async ({ userPrompt, category }) => {
+            const result = await this.productTool.generateBasicInfo({
+              userPrompt,
+              category,
+            });
+
+            return {
+              ...result,
+              message: `
+                    ### Generated Product Details
+                    - **Name:** ${result.name}
+                    - **Brand:** ${result.brand}
+                    - **Category:** ${result.category}
+                    - **Price:** $${result.price}
+                    - **Description:**: ${result.description}
+
+                    ${result.description}
+
+
+                    > Please review these details. Would you like to:
+                    1. Approve and specify inventory count
+                    2. Modify any details
+                    3. Start over with a different concept
+
+                    What would you like to do?`,
+            };
+          },
+        }),
+        handleApproval: tool({
+          description: 'Handle user approval for product details',
+          parameters: z.object({
+            productInfo: z.any(),
+            userFeedback: z.string(),
+            step: z.string(),
+          }),
+          execute: async ({ productInfo, userFeedback, step }) => {
+            // First handle the approval/feedback
+            const approvalResult = await this.productTool.handleUserApproval({
+              productInfo,
+              userFeedback,
+              step: step as ProductCreationStep,
+            });
+
+            // If basic info step was approved, validate the product
+            if (step === 'basic-info' && approvalResult.approved) {
+              const validationResult =
+                await this.productTool.validateProduct(productInfo);
+
+              if (!validationResult.isValid) {
+                return {
+                  approved: false,
+                  nextAction: 'revise',
+                  message: `Before proceeding, please address these issues:\n${validationResult.missingFields.join('\n')}`,
+                  validationErrors: validationResult.missingFields,
+                };
+              }
+            }
+
+            return approvalResult;
+          },
+        }),
+        generateProductImages: tool({
+          description: 'Generate product images',
+          parameters: z.object({
+            productInfo: z.any().describe('Product information'),
+          }),
+          execute: async ({ productInfo }) => {
+            const result = await this.productTool.generateProductImages({
+              productInfo,
+            });
+            return {
+              ...result,
+              productInfo: {
+                ...productInfo,
+                images: result.images.map(img => img.url),
+              },
+            };
+          },
+        }),
+        generateBrandAssets: tool({
+          description: 'Generate brand logo and assets',
+          parameters: z.object({
+            brand: z.string(),
+            productInfo: z.any(),
+          }),
+          execute: async ({ brand, productInfo }) => {
+            const result = await this.productTool.generateBrandAssets({
+              brand,
+              productInfo,
+            });
+            return {
+              ...result,
+              productInfo: {
+                ...productInfo,
+                brandLogo: result.brandLogo.url,
+              },
+            };
+          },
+        }),
+        validateProduct: tool({
+          description: 'Validate product details and completeness',
+          parameters: z.object({
+            product: z.any(),
+          }),
+          execute: async ({ product }) => {
+            const result = await this.productTool.validateProduct(product);
+
+            return result;
+          },
+        }),
+        saveProduct: tool({
+          description: 'Save the finalized product to the database',
+          parameters: z.object({
+            product: z.any().describe('Complete product information'),
+          }),
+          execute: async ({ product }) => {
+            const result = await this.productTool.validateProduct(product);
+
+            if (!result.isValid) {
+              return {
+                success: false,
+                message:
+                  'Product validation failed. Please fix the following issues:',
+                errors: result.missingFields,
+                canProgress: false,
+              };
+            }
+
+            const saveResult = await this.productTool.saveProduct(product);
+
+            if (!saveResult.success) {
+              return {
+                success: false,
+                message: `Unable to save product: ${saveResult.message}`,
+                errors: saveResult.errors,
+                canProgress: false,
+              };
+            }
+
+            return {
+              success: true,
+              message: `Perfect! I've saved the product to the database. You can view it at /products/${saveResult.productId}`,
+              canProgress: true,
+              productId: saveResult.productId,
+            };
+          },
+        }),
+      },
+      onStepFinish({ text, toolCalls, toolResults, finishReason }) {
+        console.log('Step:', text);
+        console.log('Tool Calls:', JSON.stringify(toolCalls, null, 2));
+        console.log('Tool Results:', JSON.stringify(toolResults, null, 2));
+        console.log('Finish Reason:', finishReason);
+      },
+      maxSteps: 20,
+      experimental_telemetry: {
+        isEnabled: true,
+        functionId: 'stream-text',
+      },
+    });
+
+    return result;
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/ai/services/image-generation.service.ts
+---------------------------------------------------
+import { Injectable } from '@nestjs/common';
+import { AiConfigService } from './ai-config.service';
+import {
+  ImageGenerationOptions,
+  ImageGenerationResponse,
+  SupportedImageModel,
+} from '../interfaces/image-generation.interface';
+import { CloudinaryService } from '@/cloudinary/services/cloudinary.service';
+
+@Injectable()
+export class ImageGenerationService {
+  private defaultModel: SupportedImageModel = 'black-forest-labs/flux-schnell';
+
+  constructor(
+    private aiConfig: AiConfigService,
+    private cloudinary: CloudinaryService,
+  ) {}
+
+  async generateProductImage(
+    options: ImageGenerationOptions,
+  ): Promise<ImageGenerationResponse> {
+    try {
+      const replicate = this.aiConfig.getReplicate();
+
+      const output = await replicate.run(options.model || this.defaultModel, {
+        input: {
+          prompt: options.prompt,
+          negative_prompt: options.negativePrompt,
+          width: options.width || 1024,
+          height: options.height || 1024,
+          num_inference_steps: options.steps || 4,
+          num_outputs: options.numOutputs || 1,
+          seed: options.seed || Math.floor(Math.random() * 1000000),
+          ...(options.sourceImage && {
+            image: options.sourceImage,
+            image_strength: options.imageStrength || 0.7,
+          }),
+        },
+      });
+
+      const urls: string[] = await Promise.all(
+        // @ts-ignore
+        output.map(async (item: Buffer, index: number) => {
+          return this.cloudinary.uploadBuffer(item);
+        }),
+      );
+
+      return {
+        urls,
+        metadata: {
+          model: options.model || this.defaultModel,
+          prompt: options.prompt,
+          generationTime: Date.now(),
+        },
+      };
+    } catch (error) {
+      console.error('Error generating product image', error);
+      throw error;
+    }
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/ai/services/ai-config.service.ts
+---------------------------------------------------
+import { Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import Replicate from 'replicate';
+import {
+  LanguageModel,
+  experimental_wrapLanguageModel as wrapLanguageModel,
+} from 'ai';
+import { openai } from '@ai-sdk/openai';
+import { customMiddleware } from '../custom-middleware';
+
+@Injectable()
+export class AiConfigService {
+  private replicate: Replicate;
+  private openAIModel: LanguageModel;
+
+  constructor(private configService: ConfigService) {
+    this.replicate = new Replicate({
+      auth: this.configService.get('REPLICATE_API_TOKEN'),
+    });
+
+    this.openAIModel = wrapLanguageModel({
+      model: openai('gpt-3.5-turbo'),
+      middleware: customMiddleware,
+    });
+  }
+
+  getReplicate() {
+    return this.replicate;
+  }
+
+  getModel() {
+    return this.openAIModel;
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/ai/interfaces/image-generation.interface.ts
+---------------------------------------------------
+export type SupportedImageModel =
+  | 'black-forest-labs/flux-schnell'
+  | 'stability-ai/stable-diffusion-img2img'
+  | 'stability-ai/sdxl'
+  | 'stability-ai/stable-diffusion-img2img:15a3689ee13b0d2616e98820eca31d4c3abcd36672df6afce5cb6feb1d66087d';
+
+export interface ImageGenerationOptions {
+  prompt: string;
+  negativePrompt?: string;
+  width?: number;
+  height?: number;
+  steps?: number;
+  numOutputs?: number;
+  model?: SupportedImageModel;
+  imageStrength?: number;
+  sourceImage?: string;
+  seed?: number;
+}
+
+export interface ImageGenerationResponse {
+  urls: string[];
+  metadata?: {
+    model: SupportedImageModel;
+    prompt: string;
+    generationTime?: number;
+  };
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/ai/interfaces/agents.ts
+---------------------------------------------------
+import { Product } from '@/products/schemas/product.schema';
+
+export interface ValidationError {
+  field: string;
+  message: string;
+  suggestion?: string;
+}
+
+export interface AgentMessage {
+  role: 'system' | 'user' | 'assistant';
+  content: string;
+  name?: string;
+}
+
+export interface AgentState {
+  messages: AgentMessage[];
+  productDraft?: Partial<Product>;
+  status: 'idle' | 'thinking' | 'validating' | 'clarifying' | 'complete';
+  context: {
+    currentStep: 'brand' | 'name' | 'price' | 'features' | 'review';
+    validationErrors?: ValidationError[];
+  };
+}
+
+export interface AgentAction {
+  type:
+    | 'ASK_CLARIFICATION'
+    | 'PROVIDE_SUGGESTIONS'
+    | 'UPDATE_PRODUCT'
+    | 'COMPLETE';
+  message: string;
+  payload: any;
+  validationErrors?: ValidationError[];
+  choices?: string[];
+  productUpdate?: Partial<Product>;
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/ai/custom-middleware.ts
+---------------------------------------------------
+import { Experimental_LanguageModelV1Middleware } from 'ai';
+
+export const customMiddleware: Experimental_LanguageModelV1Middleware = {};
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/ai/tools/product-generation.tool.ts
+---------------------------------------------------
+import { forwardRef, Inject, Injectable } from '@nestjs/common';
+import { generateObject } from 'ai';
+import { z } from 'zod';
+import { AiConfigService } from '../services/ai-config.service';
+import { ImageGenerationService } from '../services/image-generation.service';
+import { ProductCreationStep } from '@apps/shared/types/agents';
+import { ProductsService } from '@/products/services/products.service';
+
+@Injectable()
+export class ProductGenerationTool {
+  constructor(
+    private aiConfig: AiConfigService,
+    private imageService: ImageGenerationService,
+    @Inject(forwardRef(() => ProductsService))
+    private productService: ProductsService,
+  ) {}
+
+  async generateBasicInfo({
+    userPrompt,
+    category,
+  }: {
+    userPrompt: string;
+    category: string;
+  }) {
+    try {
+      const { object } = await generateObject({
+        model: this.aiConfig.getModel(),
+        prompt: `Generate initial product concept based on: ${userPrompt}. Category: ${category}`,
+        schema: z.object({
+          name: z.string().describe('Product name'),
+          description: z.string().describe('Detailed product description'),
+          brand: z.string().describe('Brand name'),
+          category: z.string(),
+          price: z.number().describe('Retail price in USD'),
+          countInStock: z.number().describe('User-specified inventory count'),
+          userApproved: z.boolean().default(false),
+          userFeedback: z.string().optional(),
+          needsUserInput: z.array(z.string()).default(['countInStock']),
+        }),
+      });
+
+      return object;
+    } catch (error) {
+      console.error('Error generating basic info', error);
+      throw error;
+    }
+  }
+
+  async generateProductImages({ productInfo }: { productInfo: any }) {
+    const basePrompt = `Professional product photography of a ${productInfo.brand} ${productInfo.name}, ${productInfo.category},
+      premium product visualization, floating in space, light gray background (#F0F0F0),
+      soft shadow beneath product, studio lighting, 8k resolution, photorealistic, ultra detailed`;
+
+    const seed = Math.floor(Math.random() * 1000000);
+
+    const angles = [
+      {
+        name: 'front',
+        prompt: `${basePrompt}, straight front view, perfectly centered`,
+      },
+      {
+        name: 'side',
+        prompt: `${basePrompt}, perfect side profile view, showing product depth`,
+      },
+      {
+        name: '45-degree',
+        prompt: `${basePrompt}, 45-degree angle view showing front and side`,
+      },
+      {
+        name: 'back',
+        prompt: `${basePrompt}, straight back view showing ports and connections`,
+      },
+    ];
+
+    const images = await Promise.all(
+      angles.map(angle =>
+        this.imageService.generateProductImage({
+          prompt: angle.prompt,
+          negativePrompt:
+            'text, watermark, low quality, blurry, distorted, hands, people, accessories, busy background, pure white background',
+          width: 1024,
+          height: 1024,
+          seed,
+        }),
+      ),
+    );
+
+    return {
+      images: images.map((image, index) => ({
+        url: image.urls[0],
+      })),
+    };
+  }
+
+  async generateBrandAssets({
+    brand,
+    productInfo,
+  }: {
+    brand: string;
+    productInfo: any;
+  }) {
+    try {
+      const { object: logoPrompt } = await generateObject({
+        model: this.aiConfig.getModel(),
+        prompt: `Generate a logo prompt for brand: ${brand}, product type: ${productInfo.category}`,
+        schema: z.object({
+          prompt: z.string().describe('Logo generation prompt'),
+          style: z.object({
+            colors: z.array(z.string()),
+            moodWords: z.array(z.string()),
+            composition: z.string(),
+          }),
+        }),
+      });
+
+      const brandLogo = await this.imageService.generateProductImage({
+        prompt: logoPrompt.prompt,
+      });
+
+      return { brandLogo: { url: brandLogo.urls[0] } };
+    } catch (error) {
+      console.error('Error generating brand assets', error);
+      throw error;
+    }
+  }
+
+  async validateProduct(product: any) {
+    const productSchema = z.object({
+      name: z.string().min(1, 'Product name is required'),
+      description: z
+        .string()
+        .min(10, 'Description must be at least 10 characters'),
+      brand: z.string().min(1, 'Brand name is required'),
+      category: z.string().min(1, 'Category is required'),
+      price: z.number().positive('Price must be positive'),
+      countInStock: z.number().min(0, 'Stock cannot be negative'),
+      images: z
+        .array(z.string().url())
+        .min(1, 'At least one product image is required'),
+      brandLogo: z.string().url('Brand logo URL is required'),
+    });
+
+    const schemaValidation = productSchema.safeParse(product);
+
+    const { object: aiValidation } = await generateObject({
+      model: this.aiConfig.getModel(),
+      prompt: `Validate product details: ${JSON.stringify(product)}`,
+      schema: z.object({
+        isValid: z.boolean(),
+        missingFields: z.array(z.string()),
+        suggestions: z.array(z.string()),
+        marketFitScore: z.number().min(0).max(100),
+        pricingFeedback: z.string(),
+      }),
+    });
+
+    return {
+      isValid: schemaValidation.success && aiValidation.isValid,
+      missingFields: [
+        ...(schemaValidation.success
+          ? []
+          : Object.keys(schemaValidation.error.formErrors.fieldErrors)),
+        ...aiValidation.missingFields,
+      ],
+      suggestions: aiValidation.suggestions,
+      marketFitScore: aiValidation.marketFitScore,
+      pricingFeedback: aiValidation.pricingFeedback,
+    };
+  }
+
+  async handleUserApproval({
+    productInfo,
+    userFeedback,
+    step,
+  }: {
+    productInfo: any;
+    userFeedback: string;
+    step: ProductCreationStep;
+  }) {
+    const { object } = await generateObject({
+      model: this.aiConfig.getModel(),
+      prompt: `Process user feedback: ${userFeedback} for step: ${step}`,
+      schema: z.object({
+        approved: z.boolean(),
+        updatedFields: z.record(z.any()).optional(),
+        nextAction: z.enum(['proceed', 'modify', 'restart']),
+        message: z.string(),
+      }),
+    });
+
+    return object;
+  }
+
+  async saveProduct(product: {
+    name: string;
+    description: string;
+    brand: string;
+    category: string;
+    price: number;
+    countInStock: number;
+    images: string[] | { url: string }[];
+    brandLogo?: string | { url: string };
+  }) {
+    console.log('Received product data:', JSON.stringify(product, null, 2));
+
+    const productSchema = z.object({
+      name: z.string(),
+      description: z.string(),
+      brand: z.string(),
+      category: z.string(),
+      price: z.number().positive(),
+      countInStock: z.number().min(0),
+      images: z.array(z.string().url()),
+      brandLogo: z.string().url().optional(),
+    });
+
+    try {
+      const transformedData = {
+        ...product,
+        images: Array.isArray(product.images)
+          ? product.images.map(img => (typeof img === 'string' ? img : img.url))
+          : [],
+        brandLogo:
+          typeof product.brandLogo === 'string'
+            ? product.brandLogo
+            : product.brandLogo?.url,
+      };
+
+      console.log('Transforming product data:', transformedData);
+
+      const validatedProduct = productSchema.parse(transformedData);
+      const savedProduct = await this.productService.create(validatedProduct);
+
+      return {
+        success: true,
+        productId: savedProduct._id.toString(),
+        message: `Successfully saved ${savedProduct.name} to the database!`,
+      };
+    } catch (error: any) {
+      console.error('Product validation/save error:', error);
+
+      if (error instanceof z.ZodError) {
+        return {
+          success: false,
+          message: 'Invalid product data',
+          errors: error.errors.map(e => ({
+            field: e.path.join('.'),
+            message: e.message,
+          })),
+        };
+      }
+
+      console.error('Error saving product:', error);
+      return {
+        success: false,
+        message: 'Failed to save product to database',
+        error: error.message,
+      };
+    }
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/ai/ai.module.ts
+---------------------------------------------------
+import { Module, forwardRef } from '@nestjs/common';
+import { ImageGenerationService } from './services/image-generation.service';
+import { AiConfigService } from './services/ai-config.service';
+import { CloudinaryModule } from '@/cloudinary/cloudinary.module';
+import { ProductGenerationTool } from './tools/product-generation.tool';
+import { ProductsModule } from '@/products/products.module';
+
+@Module({
+  imports: [CloudinaryModule, forwardRef(() => ProductsModule)],
+  providers: [ImageGenerationService, AiConfigService, ProductGenerationTool],
+  exports: [ImageGenerationService, AiConfigService, ProductGenerationTool],
+})
+export class AiModule {}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/utils/data/users.ts
+---------------------------------------------------
+import { hashPassword } from '../password';
+
+export const users = async () => [
+  {
+    name: 'Admin User',
+    email: 'admin@example.com',
+    password: await hashPassword('123456'),
+    isAdmin: true,
+  },
+  {
+    name: 'John Doe',
+    email: 'john@example.com',
+    password: await hashPassword('123456'),
+    isAdmin: false,
+  },
+  {
+    name: 'Jane Doe',
+    email: 'jane@example.com',
+    password: await hashPassword('123456'),
+    isAdmin: false,
+  },
+];
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/utils/data/products.ts
+---------------------------------------------------
+import { faker } from '@faker-js/faker';
+
+export function generateProducts(count: number = 6) {
+  const baseProducts = [
+    {
+      name: 'Airpods Wireless Bluetooth Headphones',
+      description:
+        'Bluetooth technology lets you connect it with compatible devices wirelessly. High-quality AAC audio offers immersive listening experience. Built-in microphone allows you to take calls while working.',
+      brand: 'Apple',
+      category: 'Electronics',
+      price: 89.99,
+      countInStock: 10,
+      rating: 4.5,
+      numReviews: 12,
+      images: [
+        'https://accesspress.co.ke/wp-content/uploads/2025/02/iPhone-16-Pro-Max-a-1-300x300.jpg',
+        'https://accesspress.co.ke/wp-content/uploads/2025/02/iPhone-16-Pro-Max-1-1-300x300.jpg',
+      ],
+    },
+    {
+      name: 'iPhone 11 Pro 256GB Memory',
+      description:
+        'Introducing the iPhone 11 Pro. A transformative triple-camera system that adds tons of capability without complexity. An unprecedented leap in battery life.',
+      brand: 'Apple',
+      category: 'Electronics',
+      price: 599.99,
+      countInStock: 7,
+      rating: 4.0,
+      numReviews: 8,
+      images: [
+        'https://accesspress.co.ke/wp-content/uploads/2025/02/iPhone-16-Pro-Max-b-300x300.jpg',
+        'https://accesspress.co.ke/wp-content/uploads/2025/02/iPhone-16-Pro-Max-c-300x300.jpg',
+      ],
+    },
+    {
+      name: 'Cannon EOS 80D DSLR Camera',
+      description:
+        'Characterized by versatile imaging specs, the Canon EOS 80D further clarifies itself using a pair of robust focusing systems and an intuitive design.',
+      brand: 'Cannon',
+      category: 'Electronics',
+      price: 929.99,
+      countInStock: 5,
+      rating: 3,
+      numReviews: 12,
+      images: [
+        'https://accesspress.co.ke/wp-content/uploads/2025/02/Low-Banner-A.png',
+        'https://accesspress.co.ke/wp-content/uploads/2025/02/Low-Banner-B.png',
+      ],
+    },
+    {
+      name: 'Sony Playstation 4 Pro White Version',
+      description:
+        'The ultimate home entertainment center starts with PlayStation. Whether you are into gaming, HD movies, television, music.',
+      brand: 'Sony',
+      category: 'Electronics',
+      price: 399.99,
+      countInStock: 11,
+      rating: 5,
+      numReviews: 12,
+      images: [
+        'https://accesspress.co.ke/wp-content/uploads/2025/02/Low-Banner-C.png',
+        'https://motta.uix.store/wp-content/uploads/2022/08/discoverzone.svg',
+      ],
+    },
+    {
+      name: 'Logitech G-Series Gaming Mouse',
+      description:
+        'Get a better handle on your games with this Logitech LIGHTSYNC gaming mouse. The six programmable buttons allow customization for a smooth playing experience.',
+      brand: 'Logitech',
+      category: 'Electronics',
+      price: 49.99,
+      countInStock: 7,
+      rating: 3.5,
+      numReviews: 10,
+      images: [
+        'https://accesspress.co.ke/wp-content/uploads/2025/02/Web-Logo-2.png',
+        'https://accesspress.co.ke/wp-content/uploads/elementor/thumbs/homev8-emc01-r1eciefd38a0g64v1x6k1o1e7dupt3r9l25btkwari.png',
+      ],
+    },
+    {
+      name: 'Amazon Echo Dot 3rd Generation',
+      description:
+        'Meet Echo Dot - Our most popular smart speaker with a fabric design. It is our most compact smart speaker that fits perfectly into small space.',
+      brand: 'Amazon',
+      category: 'Electronics',
+      price: 29.99,
+      countInStock: 0,
+      rating: 4,
+      numReviews: 12,
+      images: [
+        'https://accesspress.co.ke/wp-content/uploads/2025/02/Low-Banner-A.png',
+        'https://accesspress.co.ke/wp-content/uploads/2025/02/Low-Banner-B.png',
+      ],
+    },
+  ];
+
+  // If we need more products, generate additional ones
+  const additionalProducts = Array.from({
+    length: Math.max(0, count - baseProducts.length),
+  }).map(() => ({
+    name: faker.commerce.productName(),
+    description: faker.commerce.productDescription(),
+    brand: faker.company.name(),
+    category: faker.commerce.department(),
+    price: parseFloat(faker.commerce.price()),
+    countInStock: faker.number.int({ min: 0, max: 100 }),
+    rating: Number((Math.random() * 4 + 1).toFixed(1)),
+    numReviews: faker.number.int({ min: 0, max: 50 }),
+    images: [
+      'https://accesspress.co.ke/wp-content/uploads/2025/02/Low-Banner-C.png',
+      'https://motta.uix.store/wp-content/uploads/2022/08/discoverzone.svg',
+    ],
+  }));
+
+  return [...baseProducts.slice(0, count), ...additionalProducts];
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/utils/data/product.ts
+---------------------------------------------------
+export const sampleProduct = {
+  name: 'Sample name',
+  price: 0,
+  image: '/images/sample.jpg',
+  brand: 'Sample brand',
+  category: 'Sample category',
+  numReviews: 0,
+  countInStock: 0,
+  description: 'Sample description',
+};
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/utils/index.ts
+---------------------------------------------------
+export const imageFileFilter = (req: any, file: any, cb: any) => {
+  if (!file.mimetype.match(/^image\/(jpg|jpeg|png|gif)$/)) {
+    return cb(new Error('Only image files are allowed!'), false);
+  }
+  cb(null, true);
+};
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/utils/password.ts
+---------------------------------------------------
+import * as argon2 from 'argon2';
+
+export const hashPassword = async (password: string): Promise<string> => {
+  return argon2.hash(password, {
+    type: argon2.argon2id,
+    memoryCost: 2 ** 16,
+    timeCost: 3,
+    parallelism: 1,
+  });
+};
+
+export const verifyPassword = async (
+  hashedPassword: string,
+  plainPassword: string,
+): Promise<boolean> => {
+  try {
+    const result = await argon2.verify(hashedPassword, plainPassword);
+    console.log('RESULT', result);
+    return result;
+  } catch (error) {
+    console.log('ERROR', error);
+    return false;
+  }
+};
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/utils/config.ts
+---------------------------------------------------
+import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
+import { ConfigService } from '@nestjs/config';
+import { MongooseModuleOptions } from '@nestjs/mongoose';
+
+export const connectDB = (
+  configService: ConfigService,
+): MongooseModuleOptions => ({
+  uri: configService.get<string>('MONGODB_URI'),
+  autoIndex: true,
+});
+
+export const corsConfig = (): CorsOptions => ({
+  origin: process.env.CLIENT_URL,
+  methods: 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+  credentials: true,
+});
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/utils/seed-users.ts
+---------------------------------------------------
+import { faker } from '@faker-js/faker';
+import { hash } from 'argon2';
+
+const ROLES = ['user', 'admin'] as const;
+
+interface GeneratedUser {
+  name: string;
+  email: string;
+  password: string;
+  isAdmin: boolean;
+  avatar?: string;
+  createdAt?: Date;
+  reviews?: number;
+  purchases?: number;
+}
+
+export async function generateUsers(count: number): Promise<GeneratedUser[]> {
+  const users: GeneratedUser[] = [];
+
+  // Create a specific admin user first
+  const adminUser: GeneratedUser = {
+    name: 'Admin User',
+    email: 'admin@example.com',
+    password: await hash('AdminPassword123!'),
+    isAdmin: true,
+    avatar: faker.image.avatar(),
+    createdAt: new Date(),
+    reviews: 0,
+    purchases: 0,
+  };
+  users.push(adminUser);
+
+  // Generate additional users if count > 1
+  for (let i = 1; i < count; i++) {
+    const firstName = faker.person.firstName();
+    const lastName = faker.person.lastName();
+
+    const user: GeneratedUser = {
+      name: `${firstName} ${lastName}`,
+      email: faker.internet.email({
+        firstName: firstName.toLowerCase(),
+        lastName: lastName.toLowerCase(),
+      }),
+      password: await hash('password123'),
+      isAdmin: false,
+      avatar: faker.image.avatar(),
+      createdAt: faker.date.past({ years: 1 }),
+      reviews: faker.number.int({ min: 0, max: 15 }),
+      purchases: faker.number.int({ min: 1, max: 20 }),
+    };
+
+    users.push(user);
+  }
+
+  return users;
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/app/services/app.service.ts
+---------------------------------------------------
+import { BadRequestException, Injectable } from '@nestjs/common';
+import { CloudinaryService } from 'src/cloudinary/services/cloudinary.service';
+
+@Injectable()
+export class AppService {
+  constructor(private cloudinary: CloudinaryService) {}
+
+  async uploadImageToCloudinary(file: Express.Multer.File) {
+    const result = await this.cloudinary.uploadImage(file).catch(err => {
+      throw new BadRequestException('Invalid file type.');
+    });
+
+    return result.secure_url;
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/app/controllers/app.controller.ts
+---------------------------------------------------
+import {
+  Controller,
+  Post,
+  UploadedFile,
+  UseInterceptors,
+} from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { AppService } from '../services/app.service';
+
+@Controller('')
+export class AppController {
+  constructor(private appService: AppService) {}
+
+  @Post('upload')
+  @UseInterceptors(FileInterceptor('image'))
+  async uploadFile(@UploadedFile() file: Express.Multer.File) {
+    const response = await this.appService.uploadImageToCloudinary(file);
+
+    return response.url;
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/app/app.module.ts
+---------------------------------------------------
+import { Module } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { MongooseModule } from '@nestjs/mongoose';
+import { connectDB } from '../utils/config';
+import { ProductsModule } from '../products/products.module';
+import { UsersModule } from 'src/users/users.module';
+import { CommandModule } from 'nestjs-command';
+import { CartModule } from 'src/cart/cart.module';
+import { OrderModule } from '../orders/order.module';
+// import { SeedsModule } from '../seeds/seeds.module';
+import { AppController } from './controllers/app.controller';
+import { CloudinaryModule } from '../cloudinary/cloudinary.module';
+import { AppService } from './services/app.service';
+import { AiModule } from '@/ai/ai.module';
+
+@Module({
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: ['.env'],
+    }),
+    MongooseModule.forRootAsync({
+      inject: [ConfigService],
+      useFactory: connectDB,
+    }),
+    CommandModule,
+    ProductsModule,
+    UsersModule,
+    CartModule,
+    OrderModule,
+    CloudinaryModule,
+    AiModule,
+    // SeedsModule,
+  ],
+  controllers: [AppController],
+  providers: [AppService],
+})
+export class AppModule {}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/interfaces/index.ts
+---------------------------------------------------
+import { Product, ProductDocument } from 'src/products/schemas/product.schema';
+
+export interface ShippingDetails {
+  address: string;
+  city: string;
+  postalCode: string;
+  country: string;
+}
+
+export interface OrderItem {
+  name: string;
+  qty: number;
+  image: string;
+  price: number;
+  productId: Product;
+}
+
+export interface PaymentResult {
+  id: string;
+  status: string;
+  update_time: string;
+  email_address: string;
+  provider?: 'PayPal' | 'Stripe';
+}
+
+export interface CartItem {
+  productId: string;
+  name: string;
+  image: string;
+  price: number;
+  countInStock: number;
+  qty: number;
+}
+
+export interface PaginatedProducts {
+  products: ProductDocument[];
+  pages: number;
+  page: number;
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/products/products.module.ts
+---------------------------------------------------
+import { Module } from '@nestjs/common';
+import { ProductsService } from './services/products.service';
+import { ProductsController } from './controller/products.controller';
+import { MongooseModule } from '@nestjs/mongoose';
+import { Product, ProductSchema } from './schemas/product.schema';
+import { AppService } from '@/app/services/app.service';
+import { CloudinaryModule } from '@/cloudinary/cloudinary.module';
+import { AiModule } from '@/ai/ai.module';
+import { ProductExpertAgent } from '@/ai/agents/product-expert.agent';
+import { Order, OrderSchema } from '@/orders/schemas/order.schema'; 
+import { ProductSeedCommand } from '@/users/commands/product-seed.command';
+
+@Module({
+  imports: [
+    MongooseModule.forFeature([
+      {
+        name: Product.name,
+        schema: ProductSchema,
+      },
+      {
+        name: Order.name,
+        schema: OrderSchema,
+      },
+    ]),
+    CloudinaryModule,
+    AiModule,
+  ],
+  providers: [
+    ProductsService,
+    AppService,
+    ProductExpertAgent,
+    ProductSeedCommand, // Add this
+  ],
+  controllers: [ProductsController],
+  exports: [ProductsService],
+})
+export class ProductsModule {}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/products/schemas/product.schema.ts
+---------------------------------------------------
+import * as mongoose from 'mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { User } from '../../users/schemas/user.schema';
+import { HydratedDocument } from 'mongoose';
+
+export type ProductDocument = HydratedDocument<Product>;
+
+@Schema({ timestamps: true })
+export class Review {
+  @Prop({
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'User',
+    default: null,
+  })
+  user!: User;
+
+  @Prop({ required: true })
+  name!: string;
+
+  @Prop({ required: true })
+  rating!: number;
+
+  @Prop({ required: true })
+  comment!: string;
+}
+
+@Schema({ timestamps: true })
+export class Product {
+  @Prop({ required: true })
+  name!: string;
+
+  @Prop({ required: true, unique: true }) // Add slug field
+  slug!: string; // Add slug field
+
+  @Prop({ required: true })
+  brand!: string;
+
+  @Prop({ required: true })
+  brandLogo!: string;
+
+  @Prop({ required: true })
+  category!: string;
+
+  @Prop({ required: true, type: [String], default: [] })
+  images!: string[];
+
+  @Prop({ required: true })
+  description!: string;
+
+  @Prop({ required: true })
+  reviews!: Review[];
+
+  @Prop({ required: true, default: 0 })
+  rating!: number;
+
+  @Prop({ required: true, default: 0 })
+  numReviews!: number;
+
+  @Prop({ required: true, default: 0 })
+  price!: number;
+
+  @Prop({ required: true, default: 0 })
+  countInStock!: number;
+}
+
+export const ProductSchema = SchemaFactory.createForClass(Product);
+
+// Add a pre-save hook to automatically generate slugs from product names
+ProductSchema.pre('save', function (next) {
+  if (!this.isModified('name')) return next();
+
+  // Convert the name to a URL-friendly slug
+  this.slug = this.name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+
+  next();
+});
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/products/controller/products.controller.ts
+---------------------------------------------------
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+  Query,
+  UseGuards,
+  UseInterceptors,
+  UploadedFile,
+  UploadedFiles,
+  Res,
+  BadRequestException,
+  InternalServerErrorException,
+} from '@nestjs/common';
+import { AdminGuard } from 'src/guards/admin.guard';
+import { JwtAuthGuard } from '@/guards/jwt-auth.guard';
+import { ProductDto } from '../dtos/product.dto';
+import { ReviewDto } from '../dtos/review.dto';
+import { ProductsService } from '../services/products.service';
+import { UserDocument } from '@/users/schemas/user.schema';
+import { CurrentUser } from '@/decorators/current-user.decorator';
+import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
+import { AppService } from '@/app/services/app.service';
+import { ProductExpertAgent } from '@/ai/agents/product-expert.agent';
+import { ChatRequest } from '@apps/shared/types/agents';
+import { Response } from 'express';
+
+@Controller('products')
+export class ProductsController {
+  constructor(
+    private productsService: ProductsService,
+    private appService: AppService,
+    private productExpertAgent: ProductExpertAgent,
+  ) {}
+
+  @Get()
+  getProducts(
+    @Query('keyword') keyword: string,
+    @Query('page') page: string,
+    @Query('limit') limit: string,
+  ) {
+    return this.productsService.findMany(keyword, page, limit);
+  }
+
+  @Get('topRated')
+  getTopRatedProducts() {
+    return this.productsService.findTopRated();
+  }
+
+  @Get(':id')
+  getProduct(@Param('id') id: string) {
+    return this.productsService.findById(id);
+  }
+
+  @UseGuards(AdminGuard)
+  @Delete(':id')
+  deleteUser(@Param('id') id: string) {
+    return this.productsService.deleteOne(id);
+  }
+
+  @UseGuards(AdminGuard)
+  @Post()
+  @UseInterceptors(
+    FilesInterceptor('images', 10, {
+      fileFilter: (req, file, cb) => {
+        if (!file.mimetype.match(/^image\/(jpg|jpeg|png|gif)$/)) {
+          cb(new Error('Only image files are allowed!'), false);
+        }
+        cb(null, true);
+      },
+    }),
+  )
+  async createProduct(
+    @Body() productData: Omit<ProductDto, 'images'>,
+    @UploadedFiles() files: Express.Multer.File[],
+  ) {
+    if (!files || files.length === 0) {
+      throw new BadRequestException('At least one image is required');
+    }
+
+    try {
+      const imageUrls = await Promise.all(
+        files.map(file => this.appService.uploadImageToCloudinary(file)),
+      );
+
+      return this.productsService.create({
+        ...productData,
+        images: imageUrls,
+      });
+    } catch (error) {
+      throw new InternalServerErrorException(
+        'Failed to process images or create product',
+      );
+    }
+  }
+
+  @UseGuards(AdminGuard)
+  @Put(':id')
+  updateProduct(@Param('id') id: string, @Body() product: ProductDto) {
+    return this.productsService.update(id, product);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Put(':id/review')
+  createReview(
+    @Param('id') id: string,
+    @Body() { rating, comment }: ReviewDto,
+    @CurrentUser() user: UserDocument,
+  ) {
+    return this.productsService.createReview(id, user, rating, comment);
+  }
+
+  @Post('agent/chat') //TODO: add admin guard
+  async chat(@Body() body: ChatRequest, @Res() res: Response) {
+    const { messages } = body;
+
+    const result = await this.productExpertAgent.chat(messages);
+
+    return result.pipeDataStreamToResponse(res);
+  }
+
+  @Get('slug/:slug')
+  getProductBySlug(@Param('slug') slug: string) {
+    return this.productsService.findBySlug(slug);
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/products/dtos/product.dto.ts
+---------------------------------------------------
+import { IsString, IsNumber, IsArray } from 'class-validator';
+
+export class ProductDto {
+  @IsString()
+  name!: string;
+
+  @IsNumber()
+  price!: number;
+
+  @IsString()
+  description!: string;
+
+  @IsArray()
+  @IsString({ each: true })
+  images!: string[];
+
+  @IsString()
+  brand!: string;
+
+  @IsString()
+  category!: string;
+
+  @IsNumber()
+  countInStock!: number;
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/products/dtos/review.dto.ts
+---------------------------------------------------
+import { IsString, IsNumber, Min, Max } from 'class-validator';
+
+export class ReviewDto {
+  @Min(1)
+  @Max(5)
+  @IsNumber()
+  rating!: number;
+
+  @IsString()
+  comment!: string;
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/products/services/products.service.ts
+---------------------------------------------------
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model, Types } from 'mongoose';
+import { UserDocument } from 'src/users/schemas/user.schema';
+import { sampleProduct } from '../../utils/data/product';
+import { Product, ProductDocument } from '../schemas/product.schema';
+import { PaginatedResponse } from '../../../../shared/types';
+import { Order } from '../../orders/schemas/order.schema';
+
+@Injectable()
+export class ProductsService {
+  constructor(
+    @InjectModel(Product.name) private productModel: Model<Product>,
+    @InjectModel(Order.name) private orderModel: Model<Order>,
+  ) {}
+
+  async findTopRated(): Promise<ProductDocument[]> {
+    const products = await this.productModel
+      .find({})
+      .sort({ rating: -1 })
+      .limit(3);
+
+    if (!products.length) throw new NotFoundException('No products found.');
+
+    return products;
+  }
+
+  async findMany(
+    keyword?: string,
+    page?: string,
+    limit?: string,
+  ): Promise<PaginatedResponse<Product>> {
+    const pageSize = parseInt(limit ?? '10');
+    const currentPage = parseInt(page ?? '1');
+
+    const decodedKeyword = keyword ? decodeURIComponent(keyword) : '';
+
+    const searchPattern = decodedKeyword
+      ? decodedKeyword
+          .split(' ')
+          .map(term => `(?=.*${term})`)
+          .join('')
+      : '';
+
+    const searchQuery = decodedKeyword
+      ? {
+          $or: [
+            { name: { $regex: searchPattern, $options: 'i' } },
+            { description: { $regex: searchPattern, $options: 'i' } },
+            { brand: { $regex: searchPattern, $options: 'i' } },
+            { category: { $regex: searchPattern, $options: 'i' } },
+          ],
+        }
+      : {};
+
+    const count = await this.productModel.countDocuments(searchQuery);
+    const products = await this.productModel
+      .find(searchQuery)
+      .limit(pageSize)
+      .skip(pageSize * (currentPage - 1));
+
+    if (!products.length) throw new NotFoundException('No products found.');
+
+    return {
+      items: products,
+      total: count,
+      page: currentPage,
+      pages: Math.ceil(count / pageSize),
+    };
+  }
+
+  async findById(id: string): Promise<ProductDocument> {
+    if (!Types.ObjectId.isValid(id))
+      throw new BadRequestException('Invalid product ID.');
+
+    const product = await this.productModel.findById(id);
+
+    if (!product) throw new NotFoundException('No product with given ID.');
+
+    return product;
+  }
+
+  async createMany(products: Partial<Product>[]): Promise<ProductDocument[]> {
+    const createdProducts = await this.productModel.insertMany(products);
+
+    return createdProducts as unknown as ProductDocument[];
+  }
+
+  async createSample(): Promise<ProductDocument> {
+    const createdProduct = await this.productModel.create(sampleProduct);
+
+    return createdProduct;
+  }
+
+  async update(id: string, attrs: Partial<Product>): Promise<ProductDocument> {
+    const {
+      name,
+      price,
+      description,
+      images,
+      brandLogo,
+      brand,
+      category,
+      countInStock,
+    } = attrs;
+
+    if (!Types.ObjectId.isValid(id))
+      throw new BadRequestException('Invalid product ID.');
+
+    const product = await this.productModel.findById(id);
+    if (!product) throw new NotFoundException('No product with given ID.');
+
+    product.name = name ?? product.name;
+    product.price = price ?? product.price;
+    product.description = description ?? product.description;
+    product.images = images ?? product.images;
+    product.brandLogo = brandLogo ?? product.brandLogo;
+    product.brand = brand ?? product.brand;
+    product.category = category ?? product.category;
+    product.countInStock = countInStock ?? product.countInStock;
+
+    return product.save();
+  }
+
+  async createReview(
+    id: string,
+    user: UserDocument,
+    rating: number,
+    comment: string,
+  ): Promise<ProductDocument> {
+    if (!Types.ObjectId.isValid(id))
+      throw new BadRequestException('Invalid product ID.');
+
+    const product = await this.productModel.findById(id);
+
+    if (!product) throw new NotFoundException('No product with given ID.');
+
+    const alreadyReviewed = product.reviews.find(
+      r => r.user.toString() === user._id.toString(),
+    );
+
+    if (alreadyReviewed)
+      throw new BadRequestException('Product already reviewed!');
+
+    const hasPurchased = await this.orderModel.findOne({
+      user: user._id,
+      'orderItems.productId': id,
+      status: 'delivered',
+    });
+
+    if (!hasPurchased)
+      throw new BadRequestException(
+        'You can only review products you have purchased',
+      );
+
+    const review = {
+      name: user.name,
+      rating,
+      comment,
+      user,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
+
+    product.reviews.push(review);
+
+    product.rating =
+      product.reviews.reduce((acc, item) => item.rating + acc, 0) /
+      product.reviews.length;
+
+    product.numReviews = product.reviews.length;
+
+    const updatedProduct = await product.save();
+
+    return updatedProduct;
+  }
+
+  async deleteOne(id: string): Promise<void> {
+    if (!Types.ObjectId.isValid(id))
+      throw new BadRequestException('Invalid product ID.');
+
+    const product = await this.productModel.findById(id);
+
+    if (!product) throw new NotFoundException('No product with given ID.');
+
+    await product.deleteOne();
+  }
+
+  async deleteMany(): Promise<void> {
+    await this.productModel.deleteMany({});
+  }
+
+  async findBySlug(slug: string): Promise<ProductDocument> {
+    const product = await this.productModel.findOne({ slug });
+
+    if (!product) throw new NotFoundException('No product with given slug.');
+
+    return product;
+  }
+
+  async create(productData: Partial<Product>): Promise<ProductDocument> {
+    const product = await this.productModel.create({
+      ...productData,
+      rating: 0,
+      numReviews: 0,
+      reviews: [],
+    });
+
+    return product;
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/products/services/products.service.spec.ts
+---------------------------------------------------
+import { Test, TestingModule } from '@nestjs/testing';
+import { ProductsService } from './products.service';
+
+describe('ProductsService', () => {
+  let service: ProductsService;
+
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      providers: [ProductsService],
+    }).compile();
+
+    service = module.get<ProductsService>(ProductsService);
+  });
+
+  it('should be defined', () => {
+    expect(service).toBeDefined();
+  });
+});
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/interceptors/serialize.interceptor.ts
+---------------------------------------------------
+import {
+  NestInterceptor,
+  ExecutionContext,
+  CallHandler,
+  UseInterceptors,
+} from '@nestjs/common';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { ClassConstructor, plainToClass } from 'class-transformer';
+
+export const Serialize = (dto: ClassConstructor<any>) => {
+  return UseInterceptors(new SerializeInterceptor(dto));
+};
+
+export class SerializeInterceptor implements NestInterceptor {
+  constructor(private dto: ClassConstructor<any>) {}
+
+  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+    return next.handle().pipe(
+      map((data: any) => {
+        return plainToClass(this.dto, data, {
+          excludeExtraneousValues: true,
+        });
+      })
+    );
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/guards/jwt-auth.guard.ts
+---------------------------------------------------
+import { Injectable } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
+
+@Injectable()
+export class JwtAuthGuard extends AuthGuard('jwt') {}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/guards/admin.guard.ts
+---------------------------------------------------
+import {
+  Injectable,
+  ExecutionContext,
+  UnauthorizedException,
+} from '@nestjs/common';
+import { JwtAuthGuard } from './jwt-auth.guard';
+
+@Injectable()
+export class AdminGuard extends JwtAuthGuard {
+  async canActivate(context: ExecutionContext) {
+    await super.canActivate(context);
+    const request = context.switchToHttp().getRequest();
+
+    if (!request.user?.isAdmin) {
+      throw new UnauthorizedException('Admin access required');
+    }
+
+    return true;
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/guards/local-auth.guard.ts
+---------------------------------------------------
+import {
+  BadRequestException,
+  ExecutionContext,
+  Injectable,
+} from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
+import { isString } from 'class-validator';
+
+@Injectable()
+export class LocalAuthGuard extends AuthGuard('local') {
+  async canActivate(context: ExecutionContext): Promise<boolean> {
+    const request = context.switchToHttp().getRequest();
+
+    const { email, password } = request.body;
+
+    if (
+      email.length === 0 ||
+      password.length === 0 ||
+      !isString(password) ||
+      !isString(email)
+    ) {
+      throw new BadRequestException('Please enter a valid email and password.');
+    }
+
+    const parentCanActivate = (await super.canActivate(context)) as boolean;
+
+    return parentCanActivate;
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/guards/not-authenticated.guard.ts
+---------------------------------------------------
+import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
+
+@Injectable()
+export class NotAuthenticatedGuard implements CanActivate {
+  constructor(private jwtService: JwtService) {}
+
+  async canActivate(context: ExecutionContext): Promise<boolean> {
+    const request = context.switchToHttp().getRequest();
+    const token = request.cookies?.access_token;
+
+    if (!token) {
+      return true; // Allow access if no token
+    }
+
+    try {
+      await this.jwtService.verifyAsync(token, {
+        secret: process.env.JWT_ACCESS_SECRET,
+      });
+      return false; // Deny access if token is valid
+    } catch {
+      return true; // Allow access if token is invalid
+    }
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/orders/schemas/order.schema.ts
+---------------------------------------------------
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import * as mongoose from 'mongoose';
+import { OrderItem, PaymentResult, ShippingDetails } from 'src/interfaces';
+import { User } from 'src/users/schemas/user.schema';
+
+export type OrderDocument = Order & mongoose.Document;
+
+@Schema({ timestamps: true })
+export class Order {
+  @Prop({ type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' })
+  user!: User;
+
+  @Prop({
+    required: true,
+    type: [
+      {
+        name: { required: true, type: String },
+        qty: { required: true, type: Number },
+        image: { required: true, type: String },
+        price: { required: true, type: Number },
+        productId: {
+          type: mongoose.Schema.Types.ObjectId,
+          required: true,
+          ref: 'Product',
+        },
+      },
+    ],
+  })
+  orderItems!: OrderItem[];
+
+  @Prop({
+    required: true,
+    type: {
+      address: { required: true, type: String },
+      city: { required: true, type: String },
+      postalCode: { required: true, type: String },
+      country: { required: true, type: String },
+    },
+  })
+  shippingDetails!: ShippingDetails;
+
+  @Prop({ required: true })
+  paymentMethod!: string;
+
+  @Prop({
+    required: false,
+    type: {
+      id: { required: true, type: String },
+      status: { required: true, type: String },
+      update_time: { required: true, type: String },
+      email_address: { required: true, type: String },
+    },
+  })
+  paymentResult!: PaymentResult;
+
+  @Prop({ required: true, default: 0.0 })
+  taxPrice!: number;
+
+  @Prop({ required: true, default: 0.0 })
+  shippingPrice!: number;
+
+  @Prop({ required: true, default: 0.0 })
+  itemsPrice!: number;
+
+  @Prop({ required: true, default: 0.0 })
+  totalPrice!: number;
+
+  @Prop({ default: false })
+  isPaid!: boolean;
+
+  @Prop({ required: false })
+  paidAt!: string;
+
+  @Prop({ default: false })
+  isDelivered!: boolean;
+
+  @Prop({ required: false })
+  deliveredAt!: string;
+}
+
+export const OrderSchema = SchemaFactory.createForClass(Order);
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/orders/controller/orders.controller.ts
+---------------------------------------------------
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Put,
+  UseGuards,
+} from '@nestjs/common';
+import { AdminGuard } from 'src/guards/admin.guard';
+import { OrdersService } from '../services/orders.service';
+import { UserDocument } from '@/users/schemas/user.schema';
+import { CurrentUser } from '@/decorators/current-user.decorator';
+import { JwtAuthGuard } from '@/guards/jwt-auth.guard';
+
+@Controller('orders')
+export class OrdersController {
+  constructor(private ordersService: OrdersService) {}
+
+  @UseGuards(JwtAuthGuard)
+  @Post()
+  async createOrder(@Body() body: any, @CurrentUser() user: UserDocument) {
+    return this.ordersService.create(body, user._id.toString());
+  }
+
+  @UseGuards(AdminGuard)
+  @Get()
+  async getOrders() {
+    return this.ordersService.findAll();
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('myorders')
+  async getUserOrders(@CurrentUser() user: UserDocument) {
+    return this.ordersService.findUserOrders(user._id.toString());
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get(':id')
+  async getOrder(@Param('id') id: string) {
+    return this.ordersService.findById(id);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Put(':id/pay')
+  async updateOrderPayment(
+    @Param('id') id: string,
+    @Body() { paymentResult }: any,
+  ) {
+    return this.ordersService.updatePaid(id, paymentResult);
+  }
+
+  @UseGuards(AdminGuard)
+  @Put(':id/deliver')
+  async updateOrderDelivery(@Param('id') id: string) {
+    return this.ordersService.updateDelivered(id);
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/orders/services/orders.service.ts
+---------------------------------------------------
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model, Types } from 'mongoose';
+import { PaymentResult } from 'src/interfaces';
+import { Order, OrderDocument } from '../schemas/order.schema';
+
+@Injectable()
+export class OrdersService {
+  constructor(@InjectModel(Order.name) private orderModel: Model<Order>) {}
+
+  async create(
+    orderAttrs: Partial<Order>,
+    userId: string,
+  ): Promise<OrderDocument> {
+    const {
+      orderItems,
+      shippingDetails,
+      paymentMethod,
+      itemsPrice,
+      taxPrice,
+      shippingPrice,
+      totalPrice,
+    } = orderAttrs;
+
+    if (orderItems && orderItems.length < 1)
+      throw new BadRequestException('No order items received.');
+
+    const createdOrder = await this.orderModel.create({
+      user: userId,
+      orderItems,
+      shippingDetails,
+      paymentMethod,
+      itemsPrice,
+      taxPrice,
+      shippingPrice,
+      totalPrice,
+    });
+
+    return createdOrder;
+  }
+
+  async findAll(): Promise<OrderDocument[]> {
+    const orders = await this.orderModel.find();
+
+    return orders;
+  }
+
+  async findById(id: string): Promise<OrderDocument> {
+    if (!Types.ObjectId.isValid(id))
+      throw new BadRequestException('Invalid order ID.');
+
+    const order = await this.orderModel
+      .findById(id)
+      .populate('user', 'name email');
+
+    if (!order) throw new NotFoundException('No order with given ID.');
+
+    return order;
+  }
+
+  async updatePaid(
+    id: string,
+    paymentResult: PaymentResult,
+  ): Promise<OrderDocument> {
+    if (!Types.ObjectId.isValid(id))
+      throw new BadRequestException('Invalid order ID.');
+
+    const order = await this.orderModel.findById(id);
+
+    if (!order) throw new NotFoundException('No order with given ID.');
+
+    order.isPaid = true;
+    order.paidAt = Date();
+    order.paymentResult = paymentResult;
+
+    const updatedOrder = await order.save();
+
+    return updatedOrder;
+  }
+
+  async updateDelivered(id: string): Promise<OrderDocument> {
+    if (!Types.ObjectId.isValid(id))
+      throw new BadRequestException('Invalid order ID.');
+
+    const order = await this.orderModel.findById(id);
+
+    if (!order) throw new NotFoundException('No order with given ID.');
+
+    order.isDelivered = true;
+    order.deliveredAt = Date();
+
+    const updatedOrder = await order.save();
+
+    return updatedOrder;
+  }
+
+  async findUserOrders(userId: string) {
+    const orders = await this.orderModel.find({ user: userId });
+
+    return orders;
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/orders/order.module.ts
+---------------------------------------------------
+import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { OrdersController } from './controller/orders.controller';
+import { Order, OrderSchema } from './schemas/order.schema';
+import { OrdersService } from './services/orders.service';
+
+@Module({
+  imports: [
+    MongooseModule.forFeature([
+      {
+        name: Order.name,
+        schema: OrderSchema,
+      },
+    ]),
+  ],
+  controllers: [OrdersController],
+  providers: [OrdersService],
+})
+export class OrderModule {}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/users.module.ts
+---------------------------------------------------
+import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { AuthController } from './controller/auth.controller';
+import { User, UserSchema } from './schemas/user.schema';
+import { UsersService } from './services/users.service';
+import { AuthService } from './services/auth.service';
+import { JwtModule } from '@nestjs/jwt';
+import { PassportModule } from '@nestjs/passport';
+import { LocalStrategy } from '../strategies/local.strategy';
+import { JwtStrategy } from 'src/strategies/jwt.strategy';
+import { UsersController } from './controller/users.controller';
+import { UserSeedCommand } from './commands/user-seed.command';
+
+@Module({
+  imports: [
+    MongooseModule.forFeature([
+      {
+        name: User.name,
+        schema: UserSchema,
+      },
+    ]),
+    PassportModule,
+    JwtModule.register({
+      global: true,
+      secret: process.env.JWT_ACCESS_SECRET,
+      signOptions: { expiresIn: '10m' },
+    }),
+  ],
+  controllers: [AuthController, UsersController],
+  providers: [
+    UsersService,
+    AuthService,
+    LocalStrategy,
+    JwtStrategy,
+    UserSeedCommand,
+  ],
+})
+export class UsersModule {}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/schemas/user.schema.ts
+---------------------------------------------------
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { HydratedDocument } from 'mongoose';
+
+export type UserDocument = HydratedDocument<User>;
+
+@Schema({ timestamps: true })
+export class User {
+  @Prop({ required: true })
+  name!: string;
+
+  @Prop({ required: true, unique: true })
+  email!: string;
+
+  @Prop({ required: true })
+  password!: string;
+
+  @Prop({ required: true, default: false })
+  isAdmin!: boolean;
+
+  @Prop({ type: String, default: null })
+  refreshToken?: string | null;
+}
+
+export const UserSchema = SchemaFactory.createForClass(User);
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/controller/users.controller.ts
+---------------------------------------------------
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+  Query,
+  UseGuards,
+} from '@nestjs/common';
+import { AdminGuard } from 'src/guards/admin.guard';
+import { Serialize } from 'src/interceptors/serialize.interceptor';
+import { AdminProfileDto } from '../dtos/admin.profile.dto';
+import { UserDto } from '../dtos/user.dto';
+import { UsersService } from '../services/users.service';
+import { PaginatedUsersDto } from '../dtos/paginated-users.dto';
+
+@Controller('users')
+export class UsersController {
+  constructor(private usersService: UsersService) {}
+
+  @Serialize(PaginatedUsersDto)
+  @UseGuards(AdminGuard)
+  @Get()
+  async getUsers(
+    @Query('page') page: string = '1',
+    @Query('limit') limit: string = '20',
+  ) {
+    const pageNumber = parseInt(page, 10);
+    const limitNumber = parseInt(limit, 10);
+
+    return this.usersService.findAll(pageNumber, limitNumber);
+  }
+
+  @UseGuards(AdminGuard)
+  @Delete(':id')
+  deleteUser(@Param('id') id: string) {
+    return this.usersService.deleteOne(id);
+  }
+
+  @Serialize(UserDto)
+  @UseGuards(AdminGuard)
+  @Get(':id')
+  getUser(@Param('id') id: string) {
+    return this.usersService.findById(id);
+  }
+
+  @Serialize(UserDto)
+  @UseGuards(AdminGuard)
+  @Put(':id')
+  async updateUser(
+    @Param('id') id: string,
+    @Body() credentials: AdminProfileDto,
+  ) {
+    return this.usersService.adminUpdate(id, credentials);
+  }
+
+  @Serialize(UserDto)
+  @Post('seed')
+  @UseGuards(AdminGuard)
+  async generateUsers() {
+    return this.usersService.generateUsers(500);
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/controller/auth.controller.ts
+---------------------------------------------------
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Put,
+  UseGuards,
+  Res,
+  Req,
+  UnauthorizedException,
+} from '@nestjs/common';
+import { CurrentUser } from 'src/decorators/current-user.decorator';
+import { JwtAuthGuard } from 'src/guards/jwt-auth.guard';
+import { LocalAuthGuard } from 'src/guards/local-auth.guard';
+import { Serialize } from 'src/interceptors/serialize.interceptor';
+import { ProfileDto } from '../dtos/profile.dto';
+import { RegisterDto } from '../dtos/register.dto';
+import { UserDto } from '../dtos/user.dto';
+import { UserDocument } from '../schemas/user.schema';
+import { AuthService } from '../services/auth.service';
+import { UsersService } from '../services/users.service';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { AuthResponseDto, LoginDto } from '../dtos/auth.dto';
+import { NotAuthenticatedGuard } from '@/guards/not-authenticated.guard';
+import { Response, Request } from 'express';
+import { cookieConfig } from '@apps/shared/cookie-config';
+
+@ApiTags('Authentication')
+@Controller('auth')
+export class AuthController {
+  constructor(
+    private authService: AuthService,
+    private usersService: UsersService,
+  ) {}
+
+  @ApiOperation({ summary: 'Login with email and password' })
+  @ApiResponse({
+    status: 200,
+    description: 'Login successful',
+    type: AuthResponseDto,
+  })
+  @ApiResponse({
+    status: 401,
+    description: 'Invalid credentials',
+  })
+  @UseGuards(NotAuthenticatedGuard, LocalAuthGuard)
+  @Post('login')
+  async login(
+    @Body() loginDto: LoginDto,
+    @Res({ passthrough: true }) response: Response,
+  ) {
+    const user = await this.authService.validateUser(
+      loginDto.email,
+      loginDto.password,
+    );
+
+    const { tokens, user: userData } = await this.authService.login(user);
+
+    response.cookie(
+      'access_token',
+      tokens.accessToken,
+      cookieConfig.access.options,
+    );
+
+    response.cookie(
+      'refresh_token',
+      tokens.refreshToken,
+      cookieConfig.refresh.options,
+    );
+
+    return { user: userData };
+  }
+
+  @Serialize(UserDto)
+  @UseGuards(JwtAuthGuard)
+  @Get('profile')
+  getProfile(@CurrentUser() user: UserDocument) {
+    return user;
+  }
+
+  @Post('refresh')
+  async refresh(
+    @Req() request: Request,
+    @Res({ passthrough: true }) response: Response,
+  ) {
+    const refreshToken = request.cookies['refresh_token'];
+    if (!refreshToken) {
+      throw new UnauthorizedException('No refresh token');
+    }
+
+    const tokens = await this.authService.refresh(refreshToken);
+
+    response.cookie('access_token', tokens.accessToken, {
+      ...cookieConfig.access.options,
+      expires: new Date(Date.now() + cookieConfig.access.options.maxAge),
+    });
+
+    response.cookie('refresh_token', tokens.refreshToken, {
+      ...cookieConfig.refresh.options,
+      expires: new Date(Date.now() + cookieConfig.refresh.options.maxAge),
+    });
+
+    return { success: true };
+  }
+
+  @Post('logout')
+  @UseGuards(JwtAuthGuard)
+  async logout(
+    @CurrentUser() user: UserDocument,
+    @Res({ passthrough: true }) response: Response,
+  ) {
+    await this.authService.logout(user._id.toString());
+
+    response.clearCookie('access_token');
+    response.clearCookie('refresh_token');
+
+    return { success: true };
+  }
+
+  @ApiOperation({ summary: 'Register a new user' })
+  @ApiResponse({
+    status: 201,
+    description: 'User successfully registered',
+    type: AuthResponseDto,
+  })
+  @ApiResponse({
+    status: 400,
+    description: 'Bad request - validation error',
+  })
+  @Post('register')
+  async register(@Body() registerDto: RegisterDto) {
+    const user = await this.usersService.create(registerDto);
+    return this.authService.login(user);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Put('profile')
+  async updateProfile(
+    @CurrentUser() user: UserDocument,
+    @Body() updateDto: ProfileDto,
+  ) {
+    return this.usersService.update(user._id.toString(), updateDto);
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/dtos/user.dto.ts
+---------------------------------------------------
+import { Expose, Transform } from 'class-transformer';
+import { ObjectId } from 'mongoose';
+
+export class UserDto {
+  @Expose()
+  email!: string;
+
+  @Expose()
+  @Transform(({ key, obj }) => obj[key])
+  _id!: ObjectId;
+
+  @Expose()
+  name!: string;
+
+  @Expose()
+  isAdmin!: boolean;
+
+  @Expose()
+  accessToken?: string;
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/dtos/auth.dto.ts
+---------------------------------------------------
+import { IsEmail, IsString } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
+
+export class LoginDto {
+  @ApiProperty({
+    example: 'john@example.com',
+  })
+  @IsEmail()
+  email!: string;
+
+  @ApiProperty({
+    example: 'password123',
+  })
+  @IsString()
+  password!: string;
+}
+
+export class TokensDto {
+  @ApiProperty({
+    example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...',
+    description: 'JWT access token',
+  })
+  @IsString()
+  accessToken!: string;
+
+  @ApiProperty({
+    example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...',
+    description: 'JWT refresh token',
+  })
+  @IsString()
+  refreshToken!: string;
+}
+
+export interface TokenPayload {
+  sub: string; // user id
+  email: string;
+  isAdmin: boolean;
+  type: 'access' | 'refresh';
+  jti?: string; // Add this for refresh tokens
+}
+
+export class UserResponseDto {
+  @ApiProperty()
+  id!: string;
+
+  @ApiProperty()
+  email!: string;
+
+  @ApiProperty()
+  name!: string;
+
+  @ApiProperty()
+  isAdmin!: boolean;
+}
+
+export class AuthResponseDto {
+  @ApiProperty()
+  tokens!: TokensDto;
+
+  @ApiProperty()
+  user!: UserResponseDto;
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/dtos/register.dto.ts
+---------------------------------------------------
+import { IsEmail, IsString, MinLength, MaxLength } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
+
+export class RegisterDto {
+  @ApiProperty({
+    example: 'John Doe',
+    minLength: 4,
+    maxLength: 20,
+  })
+  @IsString()
+  @MinLength(4, { message: 'Username is too short.' })
+  @MaxLength(20, { message: 'Username is too long.' })
+  name!: string;
+
+  @ApiProperty({
+    example: 'john@example.com',
+  })
+  @IsEmail({}, { message: 'Email address is not valid.' })
+  email!: string;
+
+  @ApiProperty({
+    example: 'password123',
+    minLength: 5,
+    maxLength: 20,
+  })
+  @IsString()
+  @MinLength(5, { message: 'Password is too short.' })
+  @MaxLength(20, { message: 'Password is too long.' })
+  password!: string;
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/dtos/admin.profile.dto.ts
+---------------------------------------------------
+import {
+  IsEmail,
+  IsString,
+  MinLength,
+  MaxLength,
+  IsOptional,
+  IsBoolean,
+} from 'class-validator';
+
+export class AdminProfileDto {
+  @IsString()
+  @MinLength(4, { message: 'Username is too short.' })
+  @MaxLength(20, { message: 'Username is too long.' })
+  @IsOptional()
+  name?: string;
+
+  @IsEmail({}, { message: 'Email address is not valid.' })
+  @IsOptional()
+  email?: string;
+
+  @IsBoolean()
+  @IsOptional()
+  isAdmin?: boolean;
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/dtos/profile.dto.ts
+---------------------------------------------------
+import {
+  IsEmail,
+  IsString,
+  MinLength,
+  MaxLength,
+  IsOptional,
+} from 'class-validator';
+
+export class ProfileDto {
+  @IsString()
+  @MinLength(4, { message: 'Username is too short.' })
+  @MaxLength(20, { message: 'Username is too long.' })
+  @IsOptional()
+  name?: string;
+
+  @IsEmail({}, { message: 'Email address is not valid.' })
+  @IsOptional()
+  email?: string;
+
+  @IsString()
+  @MinLength(5, { message: 'Password is too short.' })
+  @MaxLength(20, { message: 'Password is too long.' })
+  @IsOptional()
+  password?: string;
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/dtos/paginated-users.dto.ts
+---------------------------------------------------
+import { Expose, Type } from 'class-transformer';
+import { UserDto } from './user.dto';
+
+export class PaginatedUsersDto {
+  @Expose()
+  @Type(() => UserDto)
+  items!: UserDto[];
+
+  @Expose()
+  total!: number;
+
+  @Expose()
+  page!: number;
+
+  @Expose()
+  pages!: number;
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/services/tests/auth.service.spec.ts
+---------------------------------------------------
+import { Test, TestingModule } from '@nestjs/testing';
+import { AuthService } from '../auth.service';
+
+describe('AuthService', () => {
+  let service: AuthService;
+
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      providers: [AuthService],
+    }).compile();
+
+    service = module.get<AuthService>(AuthService);
+  });
+
+  it('should be defined', () => {
+    expect(service).toBeDefined();
+  });
+});
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/services/tests/users.service.spec.ts
+---------------------------------------------------
+import { Test, TestingModule } from '@nestjs/testing';
+import { UsersService } from '../users.service';
+
+describe('UsersService', () => {
+  let service: UsersService;
+
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      providers: [UsersService],
+    }).compile();
+
+    service = module.get<UsersService>(UsersService);
+  });
+
+  it('should be defined', () => {
+    expect(service).toBeDefined();
+  });
+});
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/services/auth.service.ts
+---------------------------------------------------
+import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { UsersService } from './users.service';
+import { JwtService } from '@nestjs/jwt';
+import { AuthResponseDto, TokensDto, TokenPayload } from '../dtos/auth.dto';
+import { User, UserDocument } from '../schemas/user.schema';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { verifyPassword } from '@/utils/password';
+import { randomUUID } from 'crypto';
+
+@Injectable()
+export class AuthService {
+  constructor(
+    private usersService: UsersService,
+    private jwtService: JwtService,
+    @InjectModel(User.name) private userModel: Model<User>,
+  ) {}
+
+  async validateUser(email: string, password: string): Promise<UserDocument> {
+    const user = await this.usersService.findOne(email);
+    if (!user) {
+      throw new UnauthorizedException('Invalid credentials');
+    }
+
+    const isPasswordValid = await verifyPassword(user.password, password);
+    if (!isPasswordValid) {
+      throw new UnauthorizedException('Invalid credentials');
+    }
+
+    return user;
+  }
+
+  async login(user: UserDocument): Promise<AuthResponseDto> {
+    const tokens = await this.generateTokens(user);
+
+    return {
+      tokens,
+      user: {
+        id: user._id.toString(),
+        email: user.email,
+        name: user.name,
+        isAdmin: user.isAdmin,
+      },
+    };
+  }
+
+  private async generateTokens(user: UserDocument): Promise<TokensDto> {
+    const jti = randomUUID();
+
+    const [accessToken, refreshToken] = await Promise.all([
+      this.jwtService.signAsync(
+        {
+          sub: user._id.toString(),
+          email: user.email,
+          isAdmin: user.isAdmin,
+          type: 'access',
+        } as TokenPayload,
+        {
+          expiresIn: '10m',
+          secret: process.env.JWT_ACCESS_SECRET,
+        },
+      ),
+      this.jwtService.signAsync(
+        {
+          sub: user._id.toString(),
+          email: user.email,
+          isAdmin: user.isAdmin,
+          type: 'refresh',
+          jti,
+        } as TokenPayload,
+        {
+          expiresIn: '7d',
+          secret: process.env.JWT_REFRESH_SECRET,
+        },
+      ),
+    ]);
+
+    await this.userModel.findByIdAndUpdate(user._id, {
+      refreshToken: jti,
+    });
+
+    return {
+      accessToken,
+      refreshToken,
+    };
+  }
+
+  async refresh(refreshToken: string): Promise<TokensDto> {
+    try {
+      const payload = await this.jwtService.verifyAsync<TokenPayload>(
+        refreshToken,
+        {
+          secret: process.env.JWT_REFRESH_SECRET,
+        },
+      );
+
+      if (payload.type !== 'refresh' || !payload.jti) {
+        throw new UnauthorizedException();
+      }
+
+      const user = await this.userModel.findById(payload.sub);
+      if (!user || !user.refreshToken) {
+        throw new UnauthorizedException();
+      }
+
+      if (user.refreshToken !== payload.jti) {
+        throw new UnauthorizedException('Invalid refresh token');
+      }
+
+      return this.generateTokens(user);
+    } catch {
+      throw new UnauthorizedException();
+    }
+  }
+
+  async logout(userId: string): Promise<void> {
+    await this.userModel.findByIdAndUpdate(userId, {
+      refreshToken: null,
+    });
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/services/users.service.ts
+---------------------------------------------------
+import { Model, Types } from 'mongoose';
+import { InjectModel } from '@nestjs/mongoose';
+import {
+  BadRequestException,
+  Injectable,
+  Logger,
+  NotFoundException,
+} from '@nestjs/common';
+import { User, UserDocument } from '../schemas/user.schema';
+import { hashPassword } from '@/utils/password';
+import { generateUsers } from '@/utils/seed-users';
+import { PaginatedResponse } from '@apps/shared/types';
+
+@Injectable()
+export class UsersService {
+  private readonly logger = new Logger(UsersService.name);
+
+  constructor(@InjectModel(User.name) private userModel: Model<User>) {}
+
+  async create(user: Partial<User>): Promise<UserDocument> {
+    try {
+      const hashedPassword = await hashPassword(user.password ?? '');
+      return await this.userModel.create({
+        ...user,
+        password: hashedPassword,
+      });
+    } catch (error: any) {
+      this.logger.error(`Failed to create user: ${error.message}`);
+
+      if (error.code === 11000) {
+        throw new BadRequestException('Email already exists');
+      }
+
+      if (error.name === 'ValidationError') {
+        throw new BadRequestException(error.message);
+      }
+
+      throw new BadRequestException('Failed to create user');
+    }
+  }
+
+  async createMany(users: Partial<User>[]): Promise<UserDocument[]> {
+    try {
+      return (await this.userModel.insertMany(
+        users,
+      )) as unknown as UserDocument[];
+    } catch (error: any) {
+      this.logger.error(`Failed to create users: ${error.message}`);
+      throw new BadRequestException('Failed to create users');
+    }
+  }
+
+  async findOne(email: string): Promise<UserDocument | null> {
+    return this.userModel.findOne({ email });
+  }
+
+  async findById(id: string): Promise<UserDocument> {
+    if (!Types.ObjectId.isValid(id)) {
+      throw new BadRequestException('Invalid user ID');
+    }
+
+    const user = await this.userModel.findById(id);
+    if (!user) {
+      throw new NotFoundException(`User with ID ${id} not found`);
+    }
+
+    return user;
+  }
+
+  async findAll(
+    page: number = 1,
+    limit: number = 20,
+  ): Promise<PaginatedResponse<UserDocument>> {
+    const skip = (page - 1) * limit;
+
+    const [users, total] = await Promise.all([
+      this.userModel
+        .find({})
+        .sort({ createdAt: -1 })
+        .skip(skip)
+        .limit(limit)
+        .exec(),
+      this.userModel.countDocuments({}),
+    ]);
+
+    return {
+      items: users,
+      total,
+      page,
+      pages: Math.ceil(total / limit),
+    };
+  }
+
+  async deleteOne(id: string): Promise<void> {
+    if (!Types.ObjectId.isValid(id)) {
+      throw new BadRequestException('Invalid user ID');
+    }
+
+    const result = await this.userModel.findOneAndDelete({ _id: id });
+    if (!result) {
+      throw new NotFoundException(`User with ID ${id} not found`);
+    }
+  }
+
+  async update(
+    id: string,
+    attrs: Partial<User>,
+    isAdmin = false,
+  ): Promise<UserDocument> {
+    if (!Types.ObjectId.isValid(id)) {
+      throw new BadRequestException('Invalid user ID');
+    }
+
+    if (attrs.email) {
+      const existingUser = await this.findOne(attrs.email);
+      if (existingUser && existingUser._id.toString() !== id) {
+        throw new BadRequestException('Email is already in use');
+      }
+    }
+
+    const updateData: Partial<User> = {
+      ...attrs,
+      isAdmin: isAdmin ? attrs.isAdmin : undefined,
+      password: attrs.password ? await hashPassword(attrs.password) : undefined,
+    };
+
+    // Remove undefined values
+    type UpdateKeys = keyof Partial<User>;
+    Object.keys(updateData as Record<UpdateKeys, unknown>).forEach(
+      key =>
+        updateData[key as UpdateKeys] === undefined &&
+        delete updateData[key as UpdateKeys],
+    );
+
+    try {
+      const updatedUser = await this.userModel.findByIdAndUpdate(
+        id,
+        updateData,
+        { new: true, runValidators: true },
+      );
+
+      if (!updatedUser) {
+        throw new NotFoundException(`User with ID ${id} not found`);
+      }
+
+      this.logger.log(`User ${id} updated successfully`);
+      return updatedUser;
+    } catch (error: any) {
+      this.logger.error(`Failed to update user ${id}: ${error.message}`);
+      throw new BadRequestException('Failed to update user');
+    }
+  }
+
+  async adminUpdate(id: string, attrs: Partial<User>): Promise<UserDocument> {
+    return this.update(id, attrs, true);
+  }
+
+  async deleteMany(): Promise<void> {
+    try {
+      await this.userModel.deleteMany({});
+      this.logger.log('All users deleted successfully');
+    } catch (error: any) {
+      this.logger.error(`Failed to delete users: ${error.message}`);
+      throw new BadRequestException('Failed to delete users');
+    }
+  }
+
+  async generateUsers(count: number): Promise<UserDocument[]> {
+    const generatedUsers = await generateUsers(count);
+    return this.createMany(generatedUsers);
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/commands/product-seed.command.ts
+---------------------------------------------------
+import { Command } from 'nestjs-command';
+import { Injectable, Logger } from '@nestjs/common';
+import { generateProducts } from '@/utils/data/products';
+import { ProductsService } from '@/products/services/products.service';
+
+@Injectable()
+export class ProductSeedCommand {
+  private readonly logger = new Logger(ProductSeedCommand.name);
+
+  constructor(private readonly productsService: ProductsService) {}
+
+  @Command({
+    command: 'products:seed',
+    describe: 'Seed products into the database',
+  })
+  async seed() {
+    try {
+      // First, delete existing products
+      await this.productsService.deleteMany();
+
+      // Generate product data
+      const productData = generateProducts(12);
+
+      // Prepare product data - use existing image URLs directly
+      const preparedProducts = productData.map(product => {
+        // Make sure we have a non-empty images array
+        const images =
+          product.images && product.images.length > 0
+            ? product.images
+            : [
+                `https://via.placeholder.com/800x600?text=${encodeURIComponent(product.name)}`,
+              ];
+
+        // Use the first image as brand logo if not provided
+        const brandLogo = images[0];
+
+        return {
+          ...product,
+          images,
+          brandLogo,
+        };
+      });
+
+      // Create products
+      const products = await this.productsService.createMany(preparedProducts);
+
+      this.logger.log('Products seeded successfully:');
+      products.forEach(product => {
+        this.logger.log(
+          `Product - Name: ${product.name}, Brand: ${product.brand}, Price: $${product.price}`,
+        );
+      });
+
+      process.exit(0);
+    } catch (error) {
+      this.logger.error('Error seeding products:', error);
+      process.exit(1);
+    }
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/users/commands/user-seed.command.ts
+---------------------------------------------------
+import { Command } from 'nestjs-command';
+import { Injectable } from '@nestjs/common';
+import { UsersService } from '../services/users.service';
+
+@Injectable()
+export class UserSeedCommand {
+  constructor(private readonly usersService: UsersService) {}
+
+  @Command({
+    command: 'users:seed',
+    describe: 'Seed users into the database',
+  })
+  async seed() {
+    try {
+      // First, delete existing users
+      await this.usersService.deleteMany();
+
+      // Generate users (1 admin + additional if specified)
+      const users = await this.usersService.generateUsers(2);
+
+      console.log('Users seeded successfully:');
+      users.forEach(user => {
+        console.log(
+          `User - Email: ${user.email}, Name: ${user.name}, Admin: ${user.isAdmin}`,
+        );
+      });
+
+      process.exit(0);
+    } catch (error) {
+      console.error('Error seeding users:', error);
+      process.exit(1);
+    }
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/strategies/local.strategy.ts
+---------------------------------------------------
+import { Strategy } from 'passport-local';
+import { PassportStrategy } from '@nestjs/passport';
+import { Injectable } from '@nestjs/common';
+import { AuthService } from '../users/services/auth.service';
+import { UserDocument } from '../users/schemas/user.schema';
+
+@Injectable()
+export class LocalStrategy extends PassportStrategy(Strategy) {
+  constructor(private authService: AuthService) {
+    super({
+      usernameField: 'email',
+    });
+  }
+
+  async validate(email: string, password: string): Promise<UserDocument> {
+    const user = await this.authService.validateUser(email, password);
+    return user;
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/strategies/jwt.strategy.ts
+---------------------------------------------------
+import { ExtractJwt, Strategy } from 'passport-jwt';
+import { PassportStrategy } from '@nestjs/passport';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { UsersService } from 'src/users/services/users.service';
+import { TokenPayload } from '../users/dtos/auth.dto';
+
+@Injectable()
+export class JwtStrategy extends PassportStrategy(Strategy) {
+  constructor(private usersService: UsersService) {
+    super({
+      jwtFromRequest: ExtractJwt.fromExtractors([
+        request => {
+          return request?.cookies?.access_token;
+        },
+      ]),
+      ignoreExpiration: false,
+      secretOrKey: process.env.JWT_ACCESS_SECRET,
+    });
+  }
+
+  async validate(payload: TokenPayload) {
+    if (payload.type !== 'access') {
+      throw new UnauthorizedException('Invalid token type');
+    }
+
+    const user = await this.usersService.findById(payload.sub);
+
+    if (!user) {
+      throw new UnauthorizedException();
+    }
+
+    return user;
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/cli.ts
+---------------------------------------------------
+import { NestFactory } from '@nestjs/core';
+import { CommandModule, CommandService } from 'nestjs-command';
+import { AppModule } from './app/app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.createApplicationContext(AppModule, {
+    logger: ['error'],
+  });
+
+  try {
+    await app.select(CommandModule).get(CommandService).exec();
+    await app.close();
+  } catch (error) {
+    console.error(error);
+    await app.close();
+    process.exit(1);
+  }
+}
+
+bootstrap();
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/cloudinary/constants.ts
+---------------------------------------------------
+export const CLOUDINARY = 'Cloudinary';
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/cloudinary/services/cloudinary.provider.ts
+---------------------------------------------------
+import { v2 } from 'cloudinary';
+import { CLOUDINARY } from '../constants';
+
+export const CloudinaryProvider = {
+  provide: CLOUDINARY,
+  useFactory: () => {
+    return v2.config({
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+      api_key: process.env.CLOUDINARY_API_KEY,
+      api_secret: process.env.CLOUDINARY_API_SECRET,
+    });
+  },
+};
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/cloudinary/services/cloudinary.service.ts
+---------------------------------------------------
+import { Injectable, Logger } from '@nestjs/common';
+import { UploadApiErrorResponse, UploadApiResponse, v2 } from 'cloudinary';
+import { Readable } from 'stream';
+import { ConfigService } from '@nestjs/config';
+
+@Injectable()
+export class CloudinaryService {
+  private readonly logger = new Logger(CloudinaryService.name);
+  private readonly uploadTimeout = 30000; // 30 seconds timeout
+
+  constructor(private configService: ConfigService) {
+    // Ensure Cloudinary is configured on service initialization
+    this.configureCloudinary();
+  }
+
+  private configureCloudinary() {
+    const cloudName = this.configService.get('CLOUDINARY_CLOUD_NAME');
+    const apiKey = this.configService.get('CLOUDINARY_API_KEY');
+    const apiSecret = this.configService.get('CLOUDINARY_API_SECRET');
+
+    if (!cloudName || !apiKey || !apiSecret) {
+      this.logger.warn(
+        'Incomplete Cloudinary configuration. Some features may not work properly.',
+      );
+    }
+
+    v2.config({
+      cloud_name: cloudName,
+      api_key: apiKey,
+      api_secret: apiSecret,
+    });
+  }
+
+  async uploadImage(
+    file: Express.Multer.File,
+  ): Promise<UploadApiResponse | UploadApiErrorResponse> {
+    return new Promise((resolve, reject) => {
+      // Set a timeout to prevent hanging
+      const timeout = setTimeout(() => {
+        reject(new Error('Upload timeout after 30 seconds'));
+      }, this.uploadTimeout);
+
+      const upload = v2.uploader.upload_stream(
+        { folder: 'nevo commerce', resource_type: 'auto' },
+        (error, result) => {
+          clearTimeout(timeout);
+
+          if (error) {
+            this.logger.error('Cloudinary upload error:', error);
+            return reject(error);
+          }
+          resolve(result as any);
+        },
+      );
+
+      const stream = Readable.from(file.buffer);
+      stream.pipe(upload);
+    });
+  }
+
+  async uploadImages(images: string[]): Promise<string[]> {
+    if (!images || !Array.isArray(images) || images.length === 0) {
+      return [];
+    }
+
+    this.logger.log(
+      `Attempting to upload ${images.length} images to Cloudinary`,
+    );
+
+    const validUrls = images.filter(
+      url => typeof url === 'string' && url.startsWith('http'),
+    );
+    if (validUrls.length === 0) {
+      this.logger.warn('No valid image URLs to upload');
+      return [];
+    }
+
+    const uploadPromises = validUrls.map(async (imageUrl, index) => {
+      try {
+        this.logger.debug(
+          `Fetching image ${index + 1}/${validUrls.length} from URL: ${imageUrl}`,
+        );
+
+        // Use AbortController for implementing timeout
+        const controller = new AbortController();
+        const timeoutId = setTimeout(
+          () => controller.abort(),
+          this.uploadTimeout,
+        );
+
+        let imageBuffer: Buffer;
+        try {
+          const response = await fetch(imageUrl, {
+            headers: {
+              'User-Agent':
+                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            },
+            signal: controller.signal,
+          });
+
+          if (!response.ok) {
+            throw new Error(
+              `Failed to fetch image: ${response.status} ${response.statusText}`,
+            );
+          }
+
+          imageBuffer = Buffer.from(await response.arrayBuffer());
+          clearTimeout(timeoutId); // Clear the timeout as fetch completed successfully
+        } catch (fetchError: unknown) {
+          clearTimeout(timeoutId);
+          // Type guard for the error object
+          if (fetchError instanceof Error && fetchError.name === 'AbortError') {
+            throw new Error(`Fetch timeout after ${this.uploadTimeout}ms`);
+          }
+          throw fetchError;
+        }
+
+        return new Promise<string>((resolve, reject) => {
+          // Set a timeout to prevent hanging
+          const timeout = setTimeout(() => {
+            reject(
+              new Error(
+                `Upload timeout for image ${index + 1} after 30 seconds`,
+              ),
+            );
+          }, this.uploadTimeout);
+
+          const timestamp = Math.floor(Date.now() / 1000);
+          const upload = v2.uploader.upload_stream(
+            {
+              folder: 'products',
+              timestamp,
+              resource_type: 'auto',
+            },
+            (error, result) => {
+              clearTimeout(timeout);
+
+              if (error) {
+                this.logger.error(
+                  `Cloudinary upload error for image ${index + 1}:`,
+                  error,
+                );
+                return reject(error);
+              }
+
+              this.logger.log(
+                `Successfully uploaded image ${index + 1} to Cloudinary`,
+              );
+              resolve(result?.secure_url || '');
+            },
+          );
+
+          const stream = Readable.from(imageBuffer);
+          stream.pipe(upload);
+        });
+      } catch (error) {
+        this.logger.error(`Error processing image ${index + 1}:`, error);
+        return ''; // Return empty string for failed uploads
+      }
+    });
+
+    try {
+      const results = await Promise.all(uploadPromises);
+      // Filter out empty strings (failed uploads)
+      return results.filter(url => url);
+    } catch (error) {
+      this.logger.error('Error during batch image upload:', error);
+      return [];
+    }
+  }
+
+  async uploadBuffer(buffer: Buffer): Promise<string> {
+    return new Promise((resolve, reject) => {
+      // Set a timeout to prevent hanging
+      const timeout = setTimeout(() => {
+        reject(new Error('Upload timeout after 30 seconds'));
+      }, this.uploadTimeout);
+
+      const timestamp = Math.floor(Date.now() / 1000);
+      const upload = v2.uploader.upload_stream(
+        {
+          folder: 'products',
+          timestamp,
+          resource_type: 'auto',
+        },
+        (error, result) => {
+          clearTimeout(timeout);
+
+          if (error) {
+            this.logger.error('Cloudinary upload error:', error);
+            return reject(error);
+          }
+          resolve(result?.secure_url || '');
+        },
+      );
+
+      const stream = Readable.from(buffer);
+      stream.pipe(upload);
+    });
+  }
+}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/cloudinary/cloudinary.module.ts
+---------------------------------------------------
+import { Module } from '@nestjs/common';
+import { CloudinaryProvider } from './services/cloudinary.provider';
+import { CloudinaryService } from './services/cloudinary.service';
+
+@Module({
+  providers: [CloudinaryProvider, CloudinaryService],
+  exports: [CloudinaryProvider, CloudinaryService],
+})
+export class CloudinaryModule {}
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/main.ts
+---------------------------------------------------
+import 'dotenv/config';
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app/app.module';
+import { ValidationPipe, VersioningType } from '@nestjs/common';
+import { NestExpressApplication } from '@nestjs/platform-express';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import helmet from 'helmet';
+import cookieParser from 'cookie-parser';
+
+async function bootstrap() {
+  const app = await NestFactory.create<NestExpressApplication>(AppModule, {
+    logger: ['error', 'warn', 'debug', 'log', 'verbose'],
+  });
+
+  app.use(helmet());
+  app.use(cookieParser());
+
+  app.enableCors({
+    origin: process.env.ALLOWED_ORIGINS?.split(',') || 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  });
+
+  app.enableVersioning({
+    type: VersioningType.URI,
+    defaultVersion: '1',
+  });
+
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      transform: true,
+      forbidNonWhitelisted: true,
+      transformOptions: {
+        enableImplicitConversion: true,
+      },
+    }),
+  );
+
+  if (process.env.NODE_ENV !== 'production') {
+    const config = new DocumentBuilder()
+      .setTitle('E-commerce API')
+      .setDescription('Modern E-commerce REST API')
+      .setVersion('1.0')
+      .addBearerAuth()
+      .build();
+
+    const document = SwaggerModule.createDocument(app, config);
+    SwaggerModule.setup('api', app, document);
+  }
+
+  app.enableShutdownHooks();
+
+  const port = process.env.PORT || 4000;
+  await app.listen(port);
+
+  console.log(`Application is running on: ${await app.getUrl()}`);
+}
+bootstrap();
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/src/decorators/current-user.decorator.ts
+---------------------------------------------------
+import { createParamDecorator, ExecutionContext } from '@nestjs/common';
+
+export const CurrentUser = createParamDecorator(
+  (data: never, context: ExecutionContext) => {
+    const request = context.switchToHttp().getRequest();
+
+    return request.user;
+  }
+);
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/README.md
+---------------------------------------------------
+# Elecshop NestJS Authentication API
+
+A robust authentication system built with NestJS, featuring JWT-based authentication with access and refresh tokens.
+
+## Features
+
+- 🔐 JWT Authentication
+- 🔄 Refresh Token Rotation
+- 👤 User Management
+- 🛡️ Role-based Access Control (Admin/User)
+- 📚 Swagger API Documentation
+- 🔒 Secure Password Hashing with Argon2
+- 🌍 CORS Enabled
+- 🛡️ Helmet Security
+
+## Prerequisites
+
+- Node.js (v16 or higher)
+- Docker (recommended) 
+- pnpm (preferred)
+
+## Getting Started
+
+1. Navigate to the server directory:
+
+```bash
+cd server
+```
+
+2. Create a `.env` file in the `server` directory:
+
+```
+ALLOWED_ORIGINS=* (if you want to allow all origins)
+PORT=4000 (or any available port)
+JWT_SECRET= (any secret key)
+JWT_ACCESS_SECRET= (any secret key)
+JWT_REFRESH_SECRET= (any secret key)
+CLOUDINARY_CLOUD_NAME= (your cloudinary cloud name)
+CLOUDINARY_API_SECRET= (your cloudinary api secret)
+MONGODB_URI= (your mongodb uri)
+MONGO_USERNAME= (your mongodb username - optional)
+MONGO_PASSWORD= (your mongodb password - optional)
+```
+
+3. Install dependencies
+
+```bash
+pnpm install
+```
+
+4. Start MongoDB (if running locally with docker compose)
+
+```bash
+pnpm start:mongo
+docker-compose up -d
+```
+
+5. Start the NestJS server
+
+```bash
+pnpm start:dev
+```
+
+## API Documentation
+
+Once the application is running, visit `http://localhost:5000/api` to access the Swagger documentation.
+
+### Authentication Endpoints
+
+- POST `/v1/auth/register` - Register a new user
+- POST `/v1/auth/login` - Login with credentials
+- POST `/v1/auth/refresh` - Refresh access token
+- POST `/v1/auth/logout` - Logout user
+- GET `/v1/auth/profile` - Get user profile
+- more endpoints...
+
+## Token System
+
+The API uses a dual-token system:
+
+- Access Token: Short-lived (15 minutes)
+- Refresh Token: Long-lived (7 days)
+
+When the access token expires, use the refresh token to obtain a new pair of tokens.
+
+### Project Structure
+
+```bash
+src/
+├── guards/ # Authentication guards
+├── strategies/ # Passport strategies (JWT, Local)
+├── users/ # Resources (User, Order, Product, etc.)
+│ ├── controller/ # Route controllers
+│ ├── dtos/ # Data transfer objects
+│ ├── schemas/ # MongoDB schemas
+│ └── services/ # Business logic
+└── utils/ # Helper functions
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Coding Standards
+
+- Follow the existing code style
+- Write meaningful commit messages
+- Add tests for new features
+- Update documentation as needed
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Support
+
+For support, email [hello@achrafdev.com](mailto:hello@achrafdev.com) or open an issue in the repository.
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/tsconfig.json
+---------------------------------------------------
+Binary or non-text file: /home/nevo/projects/modern-ecommerce/apps/server/tsconfig.json
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/docker-compose.yml
+---------------------------------------------------
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: modern-ecommerce-mongodb
+    ports:
+      - '27017:27017'
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME:-admin}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD:-password}
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
+
+FILE: /home/nevo/projects/modern-ecommerce/apps/server/nest-cli.json
+---------------------------------------------------
+Binary or non-text file: /home/nevo/projects/modern-ecommerce/apps/server/nest-cli.json

@@ -52,6 +52,7 @@ pnpm install
 
 ```bash
 pnpm start:mongo
+docker-compose up -d
 ```
 
 5. Start the NestJS server
@@ -62,7 +63,7 @@ pnpm start:dev
 
 ## API Documentation
 
-Once the application is running, visit `http://localhost:4000/api` to access the Swagger documentation.
+Once the application is running, visit `http://localhost:5000/api` to access the Swagger documentation.
 
 ### Authentication Endpoints
 
