@@ -9,6 +9,7 @@ import type { Product } from '@apps/shared/types';
 import { ProductReviews } from './product-reviews';
 import { StarIcon } from 'lucide-react';
 import { HiOutlineShoppingBag } from 'react-icons/hi2';
+import { FaWhatsapp } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Select,
@@ -56,6 +57,54 @@ export function ProductDetails({ product }: ProductDetailsProps) {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleWhatsappOrder = () => {
+    // Direct WhatsApp URL - Replace with your actual WhatsApp Business link
+    window.open('https://wa.me/message/NDKIZB6SL7NAO1', '_blank');
+  };
+
+  // Display product features based on the product type and category
+  const renderProductFeatures = () => {
+    // Basic features that apply to all products
+    const features = [
+      { label: 'Brand', value: product.brand },
+      { label: 'Category', value: product.category },
+    ];
+
+    // Add device-specific features if they exist in product data
+    if (product.description) {
+      // You can parse features from description or have them in dedicated fields in your product model
+      // This is a placeholder for demonstration - real implementation would use actual product data
+
+      // For phones and electronics, add these common specifications
+      if (
+        product.category === 'Electronics' ||
+        product.category === 'Smartphones'
+      ) {
+        features.push(
+          { label: 'Storage', value: '128GB, 256GB, 512GB, 1TB' },
+          { label: 'Display', value: '6.3 inches' },
+          { label: 'Processor', value: 'Apple A16 Pro' },
+          { label: 'Camera', value: '48MP + 12MP + 48MP' },
+          { label: 'Battery', value: '4400mAh' },
+        );
+      }
+    }
+
+    return (
+      <div className="space-y-4">
+        <h3 className="font-medium text-lg">Product Specifications</h3>
+        <ul className="space-y-2">
+          {features.map((feature, index) => (
+            <li key={index} className="flex">
+              <span className="font-medium w-24">{feature.label}:</span>
+              <span>{feature.value}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
   };
 
   return (
@@ -164,7 +213,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                   </SelectTrigger>
                   <SelectContent>
                     {Array.from(
-                      { length: product.countInStock },
+                      { length: Math.min(product.countInStock, 10) },
                       (_, i) => i + 1,
                     ).map(num => (
                       <SelectItem key={num} value={num.toString()}>
@@ -177,27 +226,14 @@ export function ProductDetails({ product }: ProductDetailsProps) {
             )}
           </div>
 
-          <Button
-            className="w-full h-12 text-lg [&_svg]:size-5"
-            disabled={isOutOfStock || loading}
-            onClick={handleAddToCart}
-          >
-            <HiOutlineShoppingBag className="mr-2" size={30} />
-            {isOutOfStock
-              ? 'Out of Stock'
-              : loading
-                ? 'Adding...'
-                : 'Add to Cart'}
-          </Button>
-
           <div className="mt-12 sm:mt-8">
             <Tabs defaultValue="details" className="space-y-6 sm:space-y-4">
               <TabsList className="w-full">
                 <TabsTrigger value="details" className="flex-1">
                   Details
                 </TabsTrigger>
-                <TabsTrigger value="reviews" className="flex-1">
-                  Reviews ({product.numReviews})
+                <TabsTrigger value="specs" className="flex-1">
+                  Specifications
                 </TabsTrigger>
               </TabsList>
 
@@ -207,20 +243,34 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                 </div>
               </TabsContent>
 
-              <TabsContent value="reviews">
-                <div className="space-y-8">
-                  <ReviewForm
-                    productId={product._id}
-                    onSuccess={() => {
-                      // Refresh product data to show new review
-                      router.refresh();
-                    }}
-                  />
-                  <ProductReviews product={product} />
-                </div>
+              <TabsContent value="specs" className="space-y-4">
+                {renderProductFeatures()}
               </TabsContent>
             </Tabs>
           </div>
+
+          {/* Add to Cart Button */}
+          <Button
+            className="w-full h-12 text-lg [&_svg]:size-5"
+            disabled={isOutOfStock || loading}
+            onClick={handleAddToCart}
+          >
+            <HiOutlineShoppingBag className="mr-2" size={24} />
+            {isOutOfStock
+              ? 'Out of Stock'
+              : loading
+                ? 'Adding...'
+                : 'Add to Cart'}
+          </Button>
+
+          {/* WhatsApp Order Button - Styled like the example */}
+          <Button
+            onClick={handleWhatsappOrder}
+            className="w-full h-12 text-lg bg-green-500 hover:bg-green-600 text-white"
+          >
+            <FaWhatsapp className="mr-2" size={24} />
+            Order Through WhatsApp
+          </Button>
         </div>
       </div>
     </div>

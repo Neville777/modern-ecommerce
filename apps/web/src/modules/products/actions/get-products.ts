@@ -1,6 +1,7 @@
+// modules/products/actions/get-products.ts
 'use server';
 
-import { fetchWithAuth } from '@/lib/fetch-with-auth';
+import { fetchApi } from '@/lib/fetch-api';
 import type { PaginatedResponse, Product } from '@apps/shared/types';
 
 export async function getProducts(
@@ -18,9 +19,7 @@ export async function getProducts(
       searchParams.append('keyword', keyword);
     }
 
-    const response = await fetchWithAuth(
-      `/products?${searchParams.toString()}`,
-    );
+    const response = await fetchApi(`/products?${searchParams.toString()}`);
 
     if (!response.ok) {
       throw new Error('Failed to fetch products');

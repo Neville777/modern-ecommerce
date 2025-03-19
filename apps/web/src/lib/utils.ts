@@ -18,6 +18,6 @@ export const getVisiblePages = (current: number, total: number) => {
 export function formatPrice(price: number) {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'Ksh',
   }).format(price);
 }
